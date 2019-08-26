@@ -2,6 +2,7 @@
 
 var placesOccupied = [];
 var cardsUsed = [];
+var clicked = [];
 Card.list = [];
 
 function Card (name, filepath) {
@@ -64,7 +65,34 @@ function placeImage (numImages) {
   cardsUsed = [];
 }
 
+function checkClicks () {
+  if (clicked.length === 2) {
+    clicked = [];
+  }
+}
+
+function checkChoices () {
+  if (clicked[0] === clicked[1]) {
+    rightCards();
+  } else {
+    resetCards();
+  }
+}
+
+function clickHandler (e) {
+  checkClicks();
+
+  clicked.push(e.target.alt);
+}
+
+function setUpEventListener (numDivs) {
+  for (var i = 1; i < numDivs + 1; i++) {
+    var container = document.getElementById(`img${i}`);
+    container.addEventListener('click', clickHandler);
+  }
+}
+
 createCards();
 placeImage(2);
-
+setUpEventListener(4);
 
