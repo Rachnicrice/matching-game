@@ -59,6 +59,7 @@ function placeImage (numImages) {
       var placeHere = document.getElementById(`img${place}`);
 
       placeHere.appendChild(img.cloneNode());
+      placeHere.dataset.framework
     }
   }
   //Empty the array so the page can reload for the next game
@@ -83,7 +84,7 @@ function resetCards() {
   }
 
   if(document.getElementById(clicked[1].classList) === true) {
-  document.getElementById(clicked[1]).classList.replace('reset');
+    document.getElementById(clicked[1]).classList.replace('reset');
   }
   else {
     document.getElementById(clicked[1]).classList.add('reset');
@@ -132,3 +133,4 @@ function removeClickable (event) {
 createCards();
 placeImage(2);
 setUpEventListener(4);
+
