@@ -2,6 +2,7 @@
 
 var placesOccupied = [];
 var cardsUsed = [];
+Card.list = [];
 
 function Card (name, filepath) {
   this.name = name;
@@ -50,20 +51,20 @@ function placeImage (numImages) {
     img.alt = Card.list[card].name;
 
     for (var k = 0; k < 2; k++) {
-      var place = createRandomPlace();
+      var place = createRandomPlace(1, 4);
       placesOccupied.push(place);
 
       var placeHere = document.getElementById(`img${place}`);
 
-      placeHere.appendChild(img);
+      placeHere.appendChild(img.cloneNode());
     }
   }
   //Empty the array so the page can reload for the next game
-  var placesOccupied = [];
-  var cardsUsed = [];
+  placesOccupied = [];
+  cardsUsed = [];
 }
 
 createCards();
-placeImage();
+placeImage(2);
 
 
