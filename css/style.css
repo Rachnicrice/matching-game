@@ -1,0 +1,47 @@
+header{
+    background: rgb(241, 238, 238);
+    height:60px;
+    text-align:center;
+    padding-top: 40px;
+    font-size: 20px;
+}
+#img1{
+    background: black;
+    width: 200px;
+    height: 300px;
+    display: inline-block;
+    margin-left: 250px;
+    border-radius: 10px;
+    text-align: center;
+    color:white;
+    margin-top: 40px;
+    margin-right: 20px;
+
+}
+#img2{
+    background: blue;
+    width: 200px;
+    height: 300px;
+    display: inline-block;
+    border-radius: 10px;
+    text-align: center;
+    margin-right: 20px;
+}
+#img3{
+    background: red;
+    width: 200px;
+    height: 300px;
+    display: inline-block;
+    border-radius:10px;
+    text-align: center;
+    margin-right: 20px;
+}
+#img4{
+    background: green;
+    width: 200px;
+    height: 300px;
+    display: inline-block;
+    border-radius: 10px;
+    text-align: center;
+    margin-right: 20px;
+}
