@@ -2,9 +2,8 @@
     outline: dotted 1px orangered;
 }
 body{
-    width: 960px
-
-
+    width: 960px;
+    margin-left:230px;
 }
 
 header{
@@ -12,7 +11,7 @@ header{
     height:60px;
     text-align:center;
     padding-top: 40px;
-    font-size: 20px;
+    font-size: 30px;
 }
 #img1{
     background: black;
@@ -25,9 +24,8 @@ header{
     color:black;
     margin-top: 40px;
     margin-right: 20px;
+    margin-left: 45px;
     transform: translateX(-10px);
-
-
 }
 #img2{
     background: blue;
@@ -55,16 +53,19 @@ header{
     text-align: center;
     margin-right: 20px;
 }
-.img{
+.img div:target{
+    display:block;
+    background:red;
     border-radius: 10px;
+
 
 }
 
-.spin {
+/* .target {
     cursor: pointer;
     transform-style: preserve-3d;
   }
-.spin:hover {
+.spin:active {
     animation: spin 5s linear infinite;
 }
 @keyframes spin {
@@ -72,6 +73,12 @@ header{
     transform: rotateY(0deg);
 }
 100% {
-    transform: rotateY(360deg);
+    transform: rotateY(180deg);
 }
+} */
+footer{
+    text-align: center;
+    background: grey;
+    color:white;
+    margin-top:71px;
 }
