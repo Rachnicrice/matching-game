@@ -2,7 +2,8 @@
 
 var placesOccupied = [];
 var cardsUsed = [];
-var clicked = [];
+var clickedFramework = [];
+var clickedId = [];
 Card.list = [];
 
 function Card (name, filepath) {
@@ -59,7 +60,7 @@ function placeImage (numImages) {
       var placeHere = document.getElementById(`img${place}`);
 
       placeHere.appendChild(img.cloneNode());
-      placeHere.dataset.framework
+      placeHere.dataset.framework = img.id;
     }
   }
   //Empty the array so the page can reload for the next game
@@ -68,53 +69,53 @@ function placeImage (numImages) {
 }
 
 //Function changes the class in the  first and second indexes of the array
-function rightCards() {
-  document.getElementById(clicked[0]).classList.add('correct');
-  document.getElementById(clicked[1]).classList.add('correct');
-  removeClickable(clicked[0], clicked[1]);
+function rightCards(e) {
+  var choice1 = document.getElementById(clickedId[0]);
+  var choice2 = document.getElementById(clickedId[1]);
+  choice1.classList.add('correct');
+  choice2.classList.add('correct');
 }
 
 //Function changes the class back in the  first and second indexes of the array
-function resetCards() {
-  if (document.getElementById(clicked[0].classList) === true) {
-    document.getElementById(clicked[0]).classList.replace('reset');
-  }
-  else {
-    document.getElementById(clicked[0]).classList.add('reset');
+function resetCards(e) {
+  if (document.getElementById(clickedFramework[0].classList) === true) {
+    var choice1 = document.getElementById(clickedId[0]);
+    choice1.classList.replace('reset');
+  } else {
+    choice1 = document.getElementById(clickedId[0]);
+    choice1.classList.add('reset');
   }
 
-  if(document.getElementById(clicked[1].classList) === true) {
-    document.getElementById(clicked[1]).classList.replace('reset');
-  }
-  else {
-    document.getElementById(clicked[1]).classList.add('reset');
+  if (document.getElementById(clickedFramework[1].classList) === true) {
+    var choice2 = document.getElementById(clickedId[1]);
+    choice2.classList.replace('reset');
+  } else {
+    choice2 = document.getElementById(clickedId[1]);
+    choice2.classList.add('reset');
   }
 }
 
 //Checks to see if array has two items in the array then empties the the array when  === 2
-function checkChoices () {
-  if (clicked[0] === clicked[1]) {
-    rightCards();
-    removeClickable();
+function checkChoices (event) {
+  if (clickedFramework[0] === clickedFramework[1]) {
+    rightCards(event);
   } else {
-    resetCards();
+    resetCards(event);
   }
 }
 
-function checkClicks () {
-  if (clicked.length === 2) {
-    checkChoices();
-    clicked = [];
+function checkClicks (event) {
+  if (clickedFramework.length === 2) {
+    checkChoices(event);
+    clickedFramework = [];
+    clickedId = [];
   }
 }
-
 
 function clickHandler (e) {
-  checkClicks();
-
-
-  clicked.push(e.target.alt);
-  console.log(clicked)
+  clickedFramework.push(e.target.parentElement.dataset.framework);
+  clickedId.push(e.target.parentElement.id);
+  checkClicks(e);
 }
 
 function setUpEventListener (numDivs) {
@@ -122,12 +123,6 @@ function setUpEventListener (numDivs) {
     var container = document.getElementById(`img${i}`);
     container.addEventListener('click', clickHandler);
   }
-}
-
-function removeClickable (event) {
-  var container = event.target.id;
-  console.log(container)
-  container.removeEventListener();
 }
 
 createCards();
