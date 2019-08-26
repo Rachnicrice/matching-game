@@ -50,6 +50,7 @@ function placeImage (numImages) {
     var img = document.createElement('img');
     img.src = Card.list[card].filepath;
     img.alt = Card.list[card].name;
+    img.id = img.alt;
 
     for (var k = 0; k < 2; k++) {
       var place = createRandomPlace(1, 4);
@@ -66,16 +67,27 @@ function placeImage (numImages) {
 }
 
 //Function changes the class in the  first and second indexes of the array
-function rightCard() {
-  document.getElementById(clicked[0]).className = 'correct';
-  document.getElementById(clicked[1]).className = 'correct';
+function rightCards() {
+  document.getElementById(clicked[0]).classList.add('correct');
+  document.getElementById(clicked[1]).classList.add('correct');
   removeClickable(clicked[0], clicked[1]);
 }
 
 //Function changes the class back in the  first and second indexes of the array
 function resetCards() {
-  document.getElementById(clicked[0]).className = 'reset';
-  document.getElementById(clicked[1]).className = 'reset';
+  if (document.getElementById(clicked[0].classList) === true) {
+    document.getElementById(clicked[0]).classList.replace('reset');
+  }
+  else {
+    document.getElementById(clicked[0]).classList.add('reset');
+  }
+
+  if(document.getElementById(clicked[1].classList) === true) {
+  document.getElementById(clicked[1]).classList.replace('reset');
+  }
+  else {
+    document.getElementById(clicked[1]).classList.add('reset');
+  }
 }
 
 //Checks to see if array has two items in the array then empties the the array when  === 2
@@ -101,6 +113,7 @@ function clickHandler (e) {
 
 
   clicked.push(e.target.alt);
+  console.log(clicked)
 }
 
 function setUpEventListener (numDivs) {
@@ -111,9 +124,9 @@ function setUpEventListener (numDivs) {
 }
 
 function removeClickable (event) {
-  var container = event.target.id
+  var container = event.target.id;
+  console.log(container)
   container.removeEventListener();
-
 }
 
 createCards();
