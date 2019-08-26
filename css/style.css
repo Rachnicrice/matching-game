@@ -65,20 +65,24 @@ header{
     cursor: pointer;
     transform-style: preserve-3d;
   }
-.spin:active {
-    animation: spin 5s linear infinite;
+
+.spin:hover {
+    animation: spin 2s linear infinite;
 }
 @keyframes spin {
 0% {
-    transform: rotateY(0deg);
-}
-100% {
     transform: rotateY(180deg);
 }
-} */
+100% {
+
+    transform: rotateY(0deg);
+}
+}
 footer{
-    text-align: center;
-    background: grey;
-    color:white;
-    margin-top:71px;
+    background: rgb(241, 238, 238);
+    height:60px;
+    text-align:center;
+    padding-top: 40px;
+    font-size: 20px;
+
 }
