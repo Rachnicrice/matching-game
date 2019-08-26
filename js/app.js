@@ -132,4 +132,3 @@ function removeClickable (event) {
 createCards();
 placeImage(2);
 setUpEventListener(4);
-
