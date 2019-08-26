@@ -1,3 +1,12 @@
+*{
+    outline: dotted 1px orangered;
+}
+body{
+    width: 960px
+
+
+}
+
 header{
     background: rgb(241, 238, 238);
     height:60px;
@@ -10,12 +19,14 @@ header{
     width: 200px;
     height: 300px;
     display: inline-block;
-    margin-left: 250px;
+    margin-left: 20px;
     border-radius: 10px;
     text-align: center;
-    color:white;
+    color:black;
     margin-top: 40px;
     margin-right: 20px;
+    transform: translateX(-10px);
+
 
 }
 #img2{
@@ -41,7 +52,26 @@ header{
     width: 200px;
     height: 300px;
     display: inline-block;
-    border-radius: 10px;
     text-align: center;
     margin-right: 20px;
+}
+.img{
+    border-radius: 10px;
+
+}
+
+.spin {
+    cursor: pointer;
+    transform-style: preserve-3d;
+  }
+.spin:hover {
+    animation: spin 5s linear infinite;
+}
+@keyframes spin {
+0% {
+    transform: rotateY(0deg);
+}
+100% {
+    transform: rotateY(360deg);
+}
 }
