@@ -2,6 +2,8 @@
 
 var placesOccupied = [];
 var cardsUsed = [];
+var clicked = [];
+Card.list = [];
 
 function Card (name, filepath) {
   this.name = name;
@@ -50,20 +52,47 @@ function placeImage (numImages) {
     img.alt = Card.list[card].name;
 
     for (var k = 0; k < 2; k++) {
-      var place = createRandomPlace();
+      var place = createRandomPlace(1, 4);
       placesOccupied.push(place);
 
       var placeHere = document.getElementById(`img${place}`);
 
-      placeHere.appendChild(img);
+      placeHere.appendChild(img.cloneNode());
     }
   }
   //Empty the array so the page can reload for the next game
-  var placesOccupied = [];
-  var cardsUsed = [];
+  placesOccupied = [];
+  cardsUsed = [];
+}
+
+function checkClicks () {
+  if (clicked.length === 2) {
+    clicked = [];
+  }
+}
+
+function checkChoices () {
+  if (clicked[0] === clicked[1]) {
+    rightCards();
+  } else {
+    resetCards();
+  }
+}
+
+function clickHandler (e) {
+  checkClicks();
+
+  clicked.push(e.target.alt);
+}
+
+function setUpEventListener (numDivs) {
+  for (var i = 1; i < numDivs + 1; i++) {
+    var container = document.getElementById(`img${i}`);
+    container.addEventListener('click', clickHandler);
+  }
 }
 
 createCards();
-placeImage();
-
+placeImage(2);
+setUpEventListener(4);
 
