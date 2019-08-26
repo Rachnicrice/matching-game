@@ -9,6 +9,11 @@ function Card (name, filepath) {
   Card.list.push(this);
 }
 
+function createCards () {
+  new Card ('kitten1', './images/kitten1.jpeg');
+  new Card ('kitten2', './images/kitten2');
+}
+
 function createRandomPlace (placehold1, placehold2) {
   //Generate a number between the first placeholder and last placeholder for the image to go
   var createNumber = Math.random()*((placehold2 + 1) - placehold1) + placehold1;
@@ -57,5 +62,8 @@ function placeImage (numImages) {
   var placesOccupied = [];
   var cardsUsed = [];
 }
+
+createCards();
+placeImage();
 
 
