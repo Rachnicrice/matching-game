@@ -1,6 +1,7 @@
 *{
     outline: dotted 1px orangered;
 }
+
 body{
     width: 960px;
     margin-left:230px;
@@ -13,7 +14,7 @@ header{
     padding-top: 40px;
     font-size: 30px;
 }
-#img1{
+/* .container{
     background: black;
     width: 200px;
     height: 300px;
@@ -24,9 +25,8 @@ header{
     margin-top: 40px;
     margin-right: 20px;
     margin-left: 45px;
-    /* transform: translateX(-10px); */
-}
-#img2{
+} */
+.container{
     background: blue;
     width: 200px;
     height: 300px;
@@ -35,24 +35,7 @@ header{
     text-align: center;
     margin-right: 20px;
 }
-#img3{
-    background: red;
-    width: 200px;
-    height: 300px;
-    display: inline-block;
-    border-radius:10px;
-    text-align: center;
-    margin-right: 20px;
-}
-#img4{
-    background: green;
-    width: 200px;
-    height: 300px;
-    border-radius:10px;
-    display: inline-block;
-    text-align: center;
-    margin-right: 20px;
-}
+
 .fellows{
      max-width: 200px; 
      height: 300px;
@@ -62,7 +45,6 @@ header{
      z-index: 1;
 }
 
-
 footer{
     background: rgb(241, 238, 238);
     height:10px;
@@ -71,15 +53,8 @@ footer{
 
 }
 
-
 .unflipped.fellows.flipped {
     display: none;
-    /* position:absolute; ==I DON'T THINK WE NEED THIS CODE==
-    left:0;
-    -webkit-transition: opacity 1s ease-in-out;
-    -moz-transition: opacity 1s ease-in-out;
-    -o-transition: opacity 1s ease-in-out;
-    transition: opacity 1s ease-in-out; */
 }
 
 .unflipped{
