@@ -123,6 +123,7 @@ function checkClicks (event) {
     checkChoices(event);
     clickedFramework = [];
     clickedId = [];
+    flipped = [];
   }
 }
 
