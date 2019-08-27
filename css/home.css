@@ -85,16 +85,23 @@ p {
 }
 
 ul {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  display: block;
+  text-align: center;
+  margin: 200px auto;
+
 }
 
-a {
+li {
   text-decoration: none;
   color: white;
   font-size: 50px;
   display: inline-block;
+  text-decoration: none;
+}
+
+a {
+  margin: 0px 0px 0px 20px;
+  text-decoration: none;
 }
 
 a:visited {
@@ -104,6 +111,7 @@ a:visited {
 }
 
 a:hover {
+  text-decoration: none;
   color: black;
 }
 
