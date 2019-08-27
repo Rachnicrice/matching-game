@@ -1,48 +1,37 @@
-
-
 *{
     /* outline: dotted 1px orangered; */
 }
 body{
-    width: 1080px;
+    width: 960px;
+    margin-left:230px;
 }
 
-/* header{
+header{
     background: rgb(241, 238, 238);
     height:40px;
     text-align:center;
     padding-top: 10px;
     font-size: 30px;
-} */
+}
 
-.fellows{ 
-    width: 200px; 
+.fellows{
+    max-width: 200px; 
     height: 300px;
     position: absolute;
     top: 0px;
     left: 0px;
     z-index: 1;
 }
-
-
-
-
-/* 
-.unflipped.fellows{
-    max-width: 100px;
-    max-height: 50px;
-    
-
-} */
-.unflipped.flipped {  
+.unflipped.fellows.flipped {  
     display: none;
+    
 }
 
-
-/* .unflipped{
-    max-width: 100px;
-    max-height: 50px;
-} */
+.unflipped{
+    max-width: 200px;
+    max-height: 300px;
+    /* background-color: black; */
+}
 
 div, :last-child{
     position: relative;
@@ -52,19 +41,15 @@ div, :last-child{
 
 
 .spin{
-    /* margin: 10px 0px 0px 0px; */
-    /* margin-right:20px; */
+    margin: 20px 0px 10px 30px;
     border: 1.5px solid grey;
     width: 200px;
     height: 300px;
-    display: inline-block;
     border-radius:10px;
+    display: inline-block;
+
     
 }
-
-
-
-
 
 
 footer{
