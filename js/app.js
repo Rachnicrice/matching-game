@@ -114,7 +114,7 @@ function checkChoices (event) {
   if (clickedFramework[0] === clickedFramework[1]) {
     rightCards(event);
   } else {
-    resetCards(event);
+    setTimeout(resetCards, 3000);
   }
 }
 
