@@ -1,13 +1,31 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/home.css" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+    <title>Memory</title>
+  </head>
+
 
 <body>
+  
+  <canvas id='world' width='500' height='500'></canvas>
   <header>
-    <h1>Matching Game!</h1>
-    <ul>
-      <li><a href="easy.html">Easy Level</a></li>
-    </ul>
+    <h1>Welcome to our site!</h1>
   </header>
-</body>
 
+  <div id="overlay">
+    <div id="text">
+      <form id="form" action="/action_page.php">
+        <p>Welcome Player</p>
+        <p>Please Enter Your Name</p>
+        <input id="username"  size="50" type="text" name="username" value="Mickey"><br>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+    </div>
+  ​
+  <script src ="js/home.js"></script>
+</body>
 </html>
