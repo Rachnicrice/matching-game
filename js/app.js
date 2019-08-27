@@ -4,6 +4,7 @@ var placesOccupied = [];
 var cardsUsed = [];
 var clickedFramework = [];
 var clickedId = [];
+var flipped = [];
 Card.list = [];
 
 function Card (name, filepath) {
@@ -14,7 +15,7 @@ function Card (name, filepath) {
 
 function createCards () {
   new Card ('kitten1', './images/kitten1.jpeg');
-  new Card ('kitten2', './images/kitten2');
+  new Card ('kitten2', './images/kitten2.jpeg');
 }
 
 function createRandomPlace (placehold1, placehold2) {
@@ -68,8 +69,18 @@ function placeImage (numImages) {
   cardsUsed = [];
 }
 
+function flipClass (e) {
+  e.target.classList.add('flipped');
+  flipped.push(e.target);
+}
+
+function unflipClass () {
+  flipped[0].classList.replace('flipped','unflipped');
+  flipped[1].classList.replace('flipped','unflipped');
+}
+
 //Function changes the class in the  first and second indexes of the array
-function rightCards(e) {
+function rightCards() {
   var choice1 = document.getElementById(clickedId[0]);
   var choice2 = document.getElementById(clickedId[1]);
   choice1.classList.add('correct');
@@ -77,7 +88,8 @@ function rightCards(e) {
 }
 
 //Function changes the class back in the  first and second indexes of the array
-function resetCards(e) {
+function resetCards() {
+
   if (document.getElementById(clickedFramework[0].classList) === true) {
     var choice1 = document.getElementById(clickedId[0]);
     choice1.classList.replace('reset');
@@ -93,6 +105,8 @@ function resetCards(e) {
     choice2 = document.getElementById(clickedId[1]);
     choice2.classList.add('reset');
   }
+
+  unflipClass();
 }
 
 //Checks to see if array has two items in the array then empties the the array when  === 2
@@ -115,6 +129,7 @@ function checkClicks (event) {
 function clickHandler (e) {
   clickedFramework.push(e.target.parentElement.dataset.framework);
   clickedId.push(e.target.parentElement.id);
+  flipClass(e);
   checkClicks(e);
 }
 
