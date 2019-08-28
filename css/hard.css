@@ -1,6 +1,6 @@
-*{
+/* *{
     outline: dotted 1px orangered;
-}
+} */
 html {
     background: url(../images/background.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -48,6 +48,17 @@ main{
      top: 0px;
      left: 0px;
      z-index: 1;
+     cursor: pointer;
+}
+header h1 {
+    text-transform: uppercase;
+    margin-left: 20px;
+    line-height: 25px;
+    font-weight: 600;
+    font-size: 12px;
+    opacity: 0.8;
+    color: #fff;
+    text-align: center;
 }
 
 footer{
