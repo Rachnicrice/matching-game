@@ -16,6 +16,13 @@ function Card (name, filepath) {
 function createCards () {
   new Card ('apple', '/images/apple.jpg');
   new Card ('avocado', '/images/avocado.jpg');
+  new Card ('banana', '/images/banana.jpg');
+  new Card ('blueberry', '/images/blueberry.jpg');
+  new Card ('guava.jpg', '/images/guava.jpg');
+  new Card ('kiwi', '/images/kiwi.jpg');
+  new Card ('lemon', '/images/lemon.jpg');
+  new Card ('lime', '/images/lime.png');
+  new Card ('orange', '/images/orange.jpg');
 }
 
 function createRandomPlace (placehold1, placehold2) {
@@ -55,7 +62,7 @@ function placeImage (numImages) {
     img.id = img.alt;
 
     for (var k = 0; k < 2; k++) {
-      var place = createRandomPlace(1, 4);
+      var place = createRandomPlace(1, 18);
       placesOccupied.push(place);
 
       var placeHere = document.getElementById(`img${place}`);
@@ -170,7 +177,5 @@ function countTimer() {
 
 
 createCards();
-placeImage(2);
-setUpEventListener(4);
-
-
+placeImage(9);
+setUpEventListener(18);

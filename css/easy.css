@@ -15,11 +15,11 @@ body{
 }
 
 header{
-    background: rgb(241, 238, 238);
-    height:60px;
+    background-color: rgba(0,0,0,0.2);
+    height:40px;
+    width: 100%;
     text-align:center;
     padding-top: 40px;
-    font-size: 30px;
 }
 /* .container{
     background: black;
@@ -74,4 +74,18 @@ div, :last-child{
     position: relative;
     top: 0px;
     left: 0px;
+}
+
+#timer {
+    font-family: 'Share Tech Mono', monospace;
+    float: right;
+    color: #ffffff;
+    text-align: center;
+    position: relative;
+    transform: translate(-50%, -50%);
+    color: #daf6ff;
+    text-shadow: 0 0 20px rgba(10, 175, 230, 1),  0 0 20px rgba(10, 175, 230, 0);
+    letter-spacing: 0.05em;
+    font-size: 30px;
+    padding: 5px 0;
 }
