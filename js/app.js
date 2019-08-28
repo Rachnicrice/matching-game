@@ -14,8 +14,8 @@ function Card (name, filepath) {
 }
 
 function createCards () {
-  new Card ('kitten1', './images/kitten1.jpeg');
-  new Card ('kitten2', './images/kitten2.jpeg');
+  new Card ('kitten1', '/images/kitten1.jpeg');
+  new Card ('kitten2', '/images/kitten2.jpeg');
 }
 
 function createRandomPlace (placehold1, placehold2) {
@@ -81,31 +81,20 @@ function unflipClass () {
 
 //Function changes the class in the  first and second indexes of the array
 function rightCards() {
-  var choice1 = document.getElementById(clickedId[0]);
-  var choice2 = document.getElementById(clickedId[1]);
-  choice1.classList.add('correct');
-  choice2.classList.add('correct');
+  var choice1 = document.getElementById(`${clickedId[0]}`);
+  var choice2 = document.getElementById(`${clickedId[1]}`);
+  choice1.className('correct');
+  choice2.className('correct');
 }
 
 //Function changes the class back in the  first and second indexes of the array
 function resetCards() {
-
-  if (document.getElementById(clickedFramework[0].classList) === true) {
-    var choice1 = document.getElementById(clickedId[0]);
-    choice1.classList.replace('reset');
-  } else {
-    choice1 = document.getElementById(clickedId[0]);
-    choice1.classList.add('reset');
-  }
-
-  if (document.getElementById(clickedFramework[1].classList) === true) {
-    var choice2 = document.getElementById(clickedId[1]);
-    choice2.classList.replace('reset');
-  } else {
-    choice2 = document.getElementById(clickedId[1]);
-    choice2.classList.add('reset');
-  }
-
+  var choice1 = document.getElementById(`${clickedId[0]}`);
+  choice1.className('reset');
+  
+  var choice2 = document.getElementById(`${clickedId[1]}`);
+  choice2.className('reset');
+  
   unflipClass();
 }
 
@@ -114,7 +103,7 @@ function checkChoices (event) {
   if (clickedFramework[0] === clickedFramework[1]) {
     rightCards(event);
   } else {
-    resetCards(event);
+    setTimeout(resetCards, 3000);
   }
 }
 
