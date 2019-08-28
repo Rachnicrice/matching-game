@@ -1,107 +1,95 @@
-/* https://css-tricks.com/perfect-full-page-background-image/ */
-html { 
-  background: url(../images/background.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+/* https://css-tricks.com/perfect-full-page-background-image/  */
+html {
+ background: url(../images/background.jpg) no-repeat center center fixed;
+ -webkit-background-size: cover;
+ -moz-background-size: cover;
+ -o-background-size: cover;
+ background-size: cover;
 }
 body {
-  font-family: 'Open Sans', sans-serif;
-  position: relative;
+ font-family: 'Open Sans', sans-serif;
+ position: relative;
 }
-
 header {
-  background-color: rgba(0,0,0,0.2);
-  position: absolute;
-  height: 40px;
-  width: 100%;
-  left: 0px;
-  top: 0px;
+ background-color: rgba(0,0,0,0.2);
+ position: absolute;
+ height: 40px;
+ width: 100%;
+ left: 0px;
+ top: 0px;
 }
-
 header h1 {
-  text-transform: uppercase;
-  margin-left: 20px;
-  line-height: 25px;
-  font-weight: 600;
-  font-size: 12px;
-  opacity: 0.8;
-  color: #fff;
-  text-align: center;
+ text-transform: uppercase;
+ margin-left: 20px;
+ line-height: 25px;
+ font-weight: 600;
+ font-size: 12px;
+ opacity: 0.8;
+ color: #fff;
+ text-align: center;
 }
-​
 h2 {
-  text-transform: uppercase;
-  margin-left: 20px;
-  line-height: 25px;
-  font-weight: 600;
-  font-size: 60px;
-  opacity: 0.8;
-  color: #fff;
+ text-transform: uppercase;
+ margin-left: 20px;
+ line-height: 25px;
+ font-weight: 600;
+ font-size: 60px;
+ opacity: 0.8;
+ color: #fff;
 }
-
 div > div {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  font-size: 50px;
-  color: white;
-  transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ font-size: 50px;
+ color: white;
+ transform: translate(-50%,-50%);
+ -ms-transform: translate(-50%,-50%);
 }
-
 form > input:nth-child(3) {
-  width: 100%;
-  height: 100px;
-  padding: 12px 20px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 5px;
-  background-color: #f8f8f8;
-  resize: none;
-  margin: 40px 0px 0px 0px;
+ width: 100%;
+ height: 100px;
+ padding: 12px 20px;
+ box-sizing: border-box;
+ border: 2px solid #ccc;
+ border-radius: 5px;
+ background-color: #f8f8f8;
+ resize: none;
+ margin: 40px 0px 0px 0px;
 }
-
 form > input:last-child {
-  width: 100%;
-  height: 100px;
-  padding: 12px 20px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 5px;
-  background-color: #f8f8f8;
-  resize: none;
-  margin: 10px 0px 0px 0px;
+ width: 100%;
+ height: 100px;
+ padding: 12px 20px;
+ box-sizing: border-box;
+ border: 2px solid #ccc;
+ border-radius: 5px;
+ background-color: #f8f8f8;
+ resize: none;
+ margin: 10px 0px 0px 0px;
 }
-
 input {
-  font-size: 30px;
-  text-align: center;
+ font-size: 30px;
+ text-align: center;
 }
-
 p {
-  color: white;
-  margin: 30px auto 0px auto;
-  text-align: center;
+ color: white;
+ margin: 30px auto 0px auto;
+ text-align: center;
 }
-
 ul {
-  display: block;
-  text-align: center;
-  margin: 200px auto;
-
+ display: block;
+ text-align: center;
+ margin: 200px auto;
 }
-
 li {
-  text-decoration: none;
-  color: white;
-  font-size: 50px;
-  display: inline-block;
-  text-decoration: none;
-  margin: 5px;
+ text-decoration: none;
+ color: white;
+ font-size: 50px;
+ display: inline-block;
+ text-decoration: none;
+ margin: 5px;
 }
-
 a {
 background:hotpink;
 box-shadow: 0 5px  pink;
@@ -112,30 +100,27 @@ position: relative;
 text-decoration: none;
 text-transform: uppercase;
 }
-
 a:hover {
-  background-color: rgba(55, 2, 116, 0.438)
+ background-color: rgba(55, 2, 116, 0.438)
 }
-
 a:active {
 box-shadow: none;
 top: 5px;
 }
-
 input[type=text], textarea {
-  -webkit-transition: all 0.30s ease-in-out;
-  -moz-transition: all 0.30s ease-in-out;
-  -ms-transition: all 0.30s ease-in-out;
-  -o-transition: all 0.30s ease-in-out;
-  outline: none;
-  padding: 3px 0px 3px 3px;
-  margin: 5px 1px 3px 0px;
-  border: 1px solid #DDDDDD;
+ -webkit-transition: all 0.30s ease-in-out;
+ -moz-transition: all 0.30s ease-in-out;
+ -ms-transition: all 0.30s ease-in-out;
+ -o-transition: all 0.30s ease-in-out;
+ outline: none;
+ padding: 3px 0px 3px 3px;
+ margin: 5px 1px 3px 0px;
+ border: 1px solid #DDDDDD;
 }
- 
 input[type=text]:focus, textarea:focus {
-  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
-  padding: 3px 0px 3px 3px;
-  margin: 5px 1px 3px 0px;
-  border: 1px solid rgba(81, 203, 238, 1);
+ box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+ padding: 3px 0px 3px 3px;
+ margin: 5px 1px 3px 0px;
+ border: 1px solid rgba(81, 203, 238, 1);
 }
+
