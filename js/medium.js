@@ -96,6 +96,7 @@ function rightCards() {
   clickedFramework = [];
   clickedId = [];
   flipped = [];
+  setUpEventListener(18);
 }
 
 //Function changes the class back in the  first and second indexes of the array
@@ -123,6 +124,7 @@ function resetCards() {
   clickedId = [];
   unflipClass();
   flipped = [];
+  setUpEventListener(18);
 }
 
 //Checks to see if array has two items in the array then empties the the array when  === 2
@@ -142,6 +144,7 @@ function checkChoices (event) {
 
 function checkClicks (event) {
   if (clickedFramework.length === 2) {
+    removeEventListener(18);
     checkChoices(event);
   }
 }
@@ -160,6 +163,13 @@ function setUpEventListener (numDivs) {
   for (var i = 1; i < numDivs + 1; i++) {
     var container = document.getElementById(`img${i}`);
     container.addEventListener('click', clickHandler);
+  }
+}
+
+function removeEventListener (numDivs) {
+  for (var i = 1; i < numDivs + 1; i++) {
+    var container = document.getElementById(`img${i}`);
+    container.removeEventListener('click', clickHandler);
   }
 }
 

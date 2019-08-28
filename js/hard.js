@@ -25,7 +25,7 @@ function createCards () {
   new Card ('orange', '/images/orange.jpg');
   new Card ('pear', '/images/pear.jpg');
   new Card ('pineapple', '/images/pineapple.jpg');
-  new Card ('strawberry', '/images/strawberries.jpg');
+  new Card ('strawberry', '/images/strawberry.jpg');
   new Card ('tomato', '/images/tomato.jpg');
   new Card ('watermelon.png', '/images/watermelon.png');
   new Card ('kitten1', '/images/kitten1.jpeg');
@@ -103,6 +103,7 @@ function rightCards() {
   clickedFramework = [];
   clickedId = [];
   flipped = [];
+  setUpEventListener(32);
 }
 
 //Function changes the class back in the  first and second indexes of the array
@@ -130,6 +131,7 @@ function resetCards() {
   clickedId = [];
   unflipClass();
   flipped = [];
+  setUpEventListener(32);
 }
 
 //Checks to see if array has two items in the array then empties the the array when  === 2
@@ -149,6 +151,7 @@ function checkChoices (event) {
 
 function checkClicks (event) {
   if (clickedFramework.length === 2) {
+    removeEventListener(32);
     checkChoices(event);
   }
 }
@@ -167,6 +170,13 @@ function setUpEventListener (numDivs) {
   for (var i = 1; i < numDivs + 1; i++) {
     var container = document.getElementById(`img${i}`);
     container.addEventListener('click', clickHandler);
+  }
+}
+
+function removeEventListener (numDivs) {
+  for (var i = 1; i < numDivs + 1; i++) {
+    var container = document.getElementById(`img${i}`);
+    container.removeEventListener('click', clickHandler);
   }
 }
 
