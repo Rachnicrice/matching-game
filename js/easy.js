@@ -1,3 +1,4 @@
+
 'use strict';
 
 var placesOccupied = [];
@@ -18,6 +19,8 @@ function Card (name, filepath) {
 function createCards () {
   new Card ('apple', '/images/apple.jpg');
   new Card ('avocado', '/images/avocado.jpg');
+  new Card ('banana', '/images/banana.jpg');
+  new Card ('guava', '/images/guava.jpg');
 }
 
 function createRandomPlace (placehold1, placehold2) {
@@ -57,7 +60,7 @@ function placeImage (numImages) {
     img.id = img.alt;
 
     for (var k = 0; k < 2; k++) {
-      var place = createRandomPlace(1, 4);
+      var place = createRandomPlace(1, 8);
       placesOccupied.push(place);
 
       var placeHere = document.getElementById(`img${place}`);
@@ -93,7 +96,7 @@ function rightCards() {
   clickedFramework = [];
   clickedId = [];
   flipped = [];
-  setUpEventListener(4);
+  setUpEventListener(8);
   on();
 }
 
@@ -122,7 +125,7 @@ function resetCards() {
   clickedId = [];
   unflipClass();
   flipped = [];
-  setUpEventListener(4);
+  setUpEventListener(8);
 }
 
 //Checks to see if array has two items in the array then empties the the array when  === 2
@@ -142,7 +145,7 @@ function checkChoices (event) {
 
 function checkClicks (event) {
   if (clickedFramework.length === 2) {
-    removeEventListener(4);
+    removeEventListener(8);
     checkChoices(event);
   }
 }
@@ -181,10 +184,10 @@ function countTimer() {
   var minute = Math.floor((totalSeconds - hour*3600)/60);
   var seconds = totalSeconds - (hour*3600 + minute*60);
 
-  document.getElementById("timer").innerHTML = hour + ":" + minute + ":" + seconds;
+  document.getElementById('timer').innerHTML = hour + ':' + minute + ':' + seconds;
   //End code sourced from Stack Overflow
 
-  var whatTime = hour + ":" + minute + ":" + seconds;
+  var whatTime = hour + ':' + minute + ':' + seconds;
   stopTimer(whatTime);
 }
 
@@ -202,17 +205,15 @@ function saveScore () {
 }
 
 function on() {
-  document.getElementById("overlay").style.display = "block";
+  document.getElementById('overlay').style.display = 'block';
 }
 
 function off() {
-  document.getElementById("overlay").style.display = "none";
+  document.getElementById('overlay').style.display = 'none';
 }
 
 
 
 createCards();
-placeImage(2);
-setUpEventListener(4);
-
-
+placeImage(4);
+setUpEventListener(8);
