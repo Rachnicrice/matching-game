@@ -14,6 +14,20 @@ function Card (name, filepath) {
 }
 
 function createCards () {
+  new Card ('apple', '/images/apple.jpg');
+  new Card ('avocado', '/images/avocado.jpg');
+  new Card ('banana', '/images/banana.jpg');
+  new Card ('blueberry', '/images/blueberry.jpg');
+  new Card ('guava.jpg', '/images/guava.jpg');
+  new Card ('kiwi', '/images/kiwi.jpg');
+  new Card ('lemon', '/images/lemon.jpg');
+  new Card ('lime', '/images/lime.png');
+  new Card ('orange', '/images/orange.jpg');
+  new Card ('pear', '/images/pear.jpg');
+  new Card ('pineapple', '/images/pineapple.jpg');
+  new Card ('strawberry', '/images/strawberries.jpg');
+  new Card ('tomato', '/images/tomato.jpg');
+  new Card ('watermelon.png', '/images/watermelon.png');
   new Card ('kitten1', '/images/kitten1.jpeg');
   new Card ('kitten2', '/images/kitten2.jpeg');
 }
@@ -55,7 +69,7 @@ function placeImage (numImages) {
     img.id = img.alt;
 
     for (var k = 0; k < 2; k++) {
-      var place = createRandomPlace(1, 4);
+      var place = createRandomPlace(1, 32);
       placesOccupied.push(place);
 
       var placeHere = document.getElementById(`img${place}`);
@@ -120,10 +134,16 @@ function resetCards() {
 
 //Checks to see if array has two items in the array then empties the the array when  === 2
 function checkChoices (event) {
-  if (clickedFramework[0] === clickedFramework[1]) {
-    rightCards(event);
+  if (clickedId[0] === clickedId[1]){
+    clickedId.pop();
+    clickedFramework.pop();
+    flipped.pop();
   } else {
-    setTimeout(resetCards, 1500);
+    if (clickedFramework[0] === clickedFramework[1]) {
+      rightCards(event);
+    } else {
+      setTimeout(resetCards, 1500);
+    }
   }
 }
 
@@ -150,7 +170,19 @@ function setUpEventListener (numDivs) {
   }
 }
 
-createCards();
-placeImage(2);
-setUpEventListener(4);
+// https://stackoverflow.com/questions/5517597/plain-count-up-timer-in-javascript/7910506
+var timerVar = setInterval(countTimer, 1000);
+var totalSeconds = 0;
+function countTimer() {
+  ++totalSeconds;
+  var hour = Math.floor(totalSeconds /3600);
+  var minute = Math.floor((totalSeconds - hour*3600)/60);
+  var seconds = totalSeconds - (hour*3600 + minute*60);
 
+  document.getElementById("timer").innerHTML = hour + ":" + minute + ":" + seconds;
+}
+
+
+createCards();
+placeImage(16);
+setUpEventListener(32);

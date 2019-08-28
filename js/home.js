@@ -236,7 +236,7 @@ var names = [];
 var form = document.getElementById('form');
 
 function redirect() {
-  window.location.href = './select-level.html';
+  window.location.href = '/pages/select-level.html';
 }
 
 function saveUser() {
