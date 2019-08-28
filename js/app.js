@@ -83,42 +83,68 @@ function unflipClass () {
 function rightCards() {
   var choice1 = document.getElementById(`${clickedId[0]}`);
   var choice2 = document.getElementById(`${clickedId[1]}`);
-  choice1.className('correct');
-  choice2.className('correct');
+  choice1.classList.add('correct');
+  choice2.classList.add('correct');
+
+  clickedFramework = [];
+  clickedId = [];
+  flipped = [];
 }
 
 //Function changes the class back in the  first and second indexes of the array
 function resetCards() {
-  var choice1 = document.getElementById(`${clickedId[0]}`);
-  choice1.className('reset');
-  
-  var choice2 = document.getElementById(`${clickedId[1]}`);
-  choice2.className('reset');
-  
+
+  console.log(clickedId);
+
+  if (document.getElementById(`${clickedId[0].classList}`) === true) {
+    var choice1 = document.getElementById(`${clickedId[0]}`);
+    choice1.classList.replace('reset');
+  } else {
+    choice1 = document.getElementById(`${clickedId[0]}`);
+    choice1.classList.add('reset');
+  }
+
+  if (document.getElementById(`${clickedId[1].classList}`) === true) {
+    var choice2 = document.getElementById(`${clickedId[1]}`);
+    choice2.classList.replace('reset');
+  } else {
+    choice2 = document.getElementById(`${clickedId[1]}`);
+    choice2.classList.add('reset');
+  }
+
+  clickedFramework = [];
+  clickedId = [];
   unflipClass();
+  flipped = [];
 }
 
 //Checks to see if array has two items in the array then empties the the array when  === 2
 function checkChoices (event) {
-  if (clickedFramework[0] === clickedFramework[1]) {
-    rightCards(event);
+  if (clickedId[0] === clickedId[1]){
+    clickedId.pop();
+    clickedFramework.pop();
+    flipped.pop();
   } else {
-    setTimeout(resetCards, 3000);
+    if (clickedFramework[0] === clickedFramework[1]) {
+      rightCards(event);
+    } else {
+      setTimeout(resetCards, 1500);
+    }
   }
 }
 
 function checkClicks (event) {
   if (clickedFramework.length === 2) {
     checkChoices(event);
-    clickedFramework = [];
-    clickedId = [];
-    flipped = [];
   }
 }
 
 function clickHandler (e) {
   clickedFramework.push(e.target.parentElement.dataset.framework);
   clickedId.push(e.target.parentElement.id);
+
+  console.log(clickedId);
+
   flipClass(e);
   checkClicks(e);
 }
