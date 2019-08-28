@@ -197,10 +197,19 @@ function stopTimer (whatTime) {
   if (correctGuess === 8) {
     timeFinished.push(whatTime);
     clearInterval(timerVar);
+    on()
   }
 }
 
+function on() {
+  document.getElementById("overlay").style.display = "block";
+}
+
+function off() {
+  document.getElementById("overlay").style.display = "none";
+}
 
 createCards();
 placeImage(9);
 setUpEventListener(18);
+on();
