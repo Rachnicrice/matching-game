@@ -5,6 +5,8 @@ var cardsUsed = [];
 var clickedFramework = [];
 var clickedId = [];
 var flipped = [];
+var correctGuess = 0;
+var timeFinished = [];
 Card.list = [];
 
 function Card (name, filepath) {
@@ -92,6 +94,8 @@ function rightCards() {
   var choice2 = document.getElementById(`${clickedId[1]}`);
   choice1.classList.add('correct');
   choice2.classList.add('correct');
+
+  correctGuess++;
 
   clickedFramework = [];
   clickedId = [];
@@ -183,6 +187,17 @@ function countTimer() {
   var seconds = totalSeconds - (hour*3600 + minute*60);
 
   document.getElementById("timer").innerHTML = hour + ":" + minute + ":" + seconds;
+  //End code sourced from Stack Overflow
+
+  var whatTime = hour + ":" + minute + ":" + seconds;
+  stopTimer(whatTime);
+}
+
+function stopTimer (whatTime) {
+  if (correctGuess === 8) {
+    timeFinished.push(whatTime);
+    clearInterval(timerVar);
+  }
 }
 
 

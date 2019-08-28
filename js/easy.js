@@ -5,6 +5,8 @@ var cardsUsed = [];
 var clickedFramework = [];
 var clickedId = [];
 var flipped = [];
+var correctGuess = 0;
+var timeFinished = [];
 Card.list = [];
 
 function Card (name, filepath) {
@@ -85,6 +87,8 @@ function rightCards() {
   var choice2 = document.getElementById(`${clickedId[1]}`);
   choice1.classList.add('correct');
   choice2.classList.add('correct');
+
+  correctGuess++;
 
   clickedFramework = [];
   clickedId = [];
@@ -170,6 +174,7 @@ function removeEventListener (numDivs) {
 // https://stackoverflow.com/questions/5517597/plain-count-up-timer-in-javascript/7910506
 var timerVar = setInterval(countTimer, 1000);
 var totalSeconds = 0;
+
 function countTimer() {
   ++totalSeconds;
   var hour = Math.floor(totalSeconds /3600);
@@ -177,6 +182,17 @@ function countTimer() {
   var seconds = totalSeconds - (hour*3600 + minute*60);
 
   document.getElementById("timer").innerHTML = hour + ":" + minute + ":" + seconds;
+  //End code sourced from Stack Overflow
+
+  var whatTime = hour + ":" + minute + ":" + seconds;
+  stopTimer(whatTime);
+}
+
+function stopTimer (whatTime) {
+  if (correctGuess === 2) {
+    timeFinished.push(whatTime);
+    clearInterval(timerVar);
+  }
 }
 
 function on() {
@@ -186,6 +202,7 @@ function on() {
 function off() {
   document.getElementById("overlay").style.display = "none";
 }
+
 
 
 createCards();
