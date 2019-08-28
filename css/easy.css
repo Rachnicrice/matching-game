@@ -75,3 +75,7 @@ div, :last-child{
     top: 0px;
     left: 0px;
 }
+
+#timer {
+    background-color:  white;
+}
