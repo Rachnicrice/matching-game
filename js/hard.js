@@ -5,6 +5,8 @@ var cardsUsed = [];
 var clickedFramework = [];
 var clickedId = [];
 var flipped = [];
+var correctGuess = 0;
+var timeFinished = [];
 Card.list = [];
 
 function Card (name, filepath) {
@@ -100,9 +102,12 @@ function rightCards() {
   choice1.classList.add('correct');
   choice2.classList.add('correct');
 
+  correctGuess++;
+
   clickedFramework = [];
   clickedId = [];
   flipped = [];
+  setUpEventListener(32);
 }
 
 //Function changes the class back in the  first and second indexes of the array
@@ -130,6 +135,7 @@ function resetCards() {
   clickedId = [];
   unflipClass();
   flipped = [];
+  setUpEventListener(32);
 }
 
 //Checks to see if array has two items in the array then empties the the array when  === 2
@@ -149,6 +155,7 @@ function checkChoices (event) {
 
 function checkClicks (event) {
   if (clickedFramework.length === 2) {
+    removeEventListener(32);
     checkChoices(event);
   }
 }
@@ -170,17 +177,36 @@ function setUpEventListener (numDivs) {
   }
 }
 
-// https://stackoverflow.com/questions/5517597/plain-count-up-timer-in-javascript/7910506
-// var timerVar = setInterval(countTimer, 1000);
-// var totalSeconds = 0;
-// function countTimer() {
-//   ++totalSeconds;
-//   var hour = Math.floor(totalSeconds /3600);
-//   var minute = Math.floor((totalSeconds - hour*3600)/60);
-//   var seconds = totalSeconds - (hour*3600 + minute*60);
+function removeEventListener (numDivs) {
+  for (var i = 1; i < numDivs + 1; i++) {
+    var container = document.getElementById(`img${i}`);
+    container.removeEventListener('click', clickHandler);
+  }
+}
 
-//   document.getElementById("timer").innerHTML = hour + ":" + minute + ":" + seconds;
-// }
+// https://stackoverflow.com/questions/5517597/plain-count-up-timer-in-javascript/7910506
+var timerVar = setInterval(countTimer, 1000);
+var totalSeconds = 0;
+
+function countTimer() {
+  ++totalSeconds;
+  var hour = Math.floor(totalSeconds /3600);
+  var minute = Math.floor((totalSeconds - hour*3600)/60);
+  var seconds = totalSeconds - (hour*3600 + minute*60);
+
+  document.getElementById("timer").innerHTML = hour + ":" + minute + ":" + seconds;
+  //End code sourced from Stack Overflow
+
+  var whatTime = hour + ":" + minute + ":" + seconds;
+  stopTimer(whatTime);
+}
+
+function stopTimer (whatTime) {
+  if (correctGuess === 16) {
+    timeFinished.push(whatTime);
+    clearInterval(timerVar);
+  }
+}
 
 
 createCards();
