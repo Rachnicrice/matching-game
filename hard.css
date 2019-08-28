@@ -40,8 +40,8 @@ header{
     height: 150px;
     display: inline-block;
     border-radius: 10px;
-    /* text-align: center; */
-    margin-right: 20px;
+    text-align: center;
+    /* margin-right: 20px; */
     float: left;
 
 }
