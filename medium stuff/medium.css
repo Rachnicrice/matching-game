@@ -1,19 +1,16 @@
 
-
-*{
-    /* outline: dotted 1px orangered; */
-}
 body{
-    width: 1080px;
+    width: 1400px;
+    margin-left: 40px;
 }
 
-/* header{
+header{
     background: rgb(241, 238, 238);
-    height:40px;
+    height:20px;
     text-align:center;
-    padding-top: 10px;
-    font-size: 30px;
-} */
+    padding-top: 5px;
+    margin-right: 60px;
+}
 
 .fellows{ 
     width: 200px; 
@@ -24,53 +21,30 @@ body{
     z-index: 1;
 }
 
-
-
-
-/* 
-.unflipped.fellows{
-    max-width: 100px;
-    max-height: 50px;
-    
-
-} */
 .unflipped.flipped {  
     display: none;
 }
-
-
-/* .unflipped{
-    max-width: 100px;
-    max-height: 50px;
-} */
 
 div, :last-child{
     position: relative;
     top: 0px;
     left: 0px;
+    border-radius:10px;
 }
 
-
 .spin{
-    /* margin: 10px 0px 0px 0px; */
-    /* margin-right:20px; */
-    border: 1.5px solid grey;
+    margin-right:20px;
+    border: 2px solid grey;
     width: 200px;
     height: 300px;
     display: inline-block;
     border-radius:10px;
-    
 }
-
-
-
-
-
 
 footer{
     background: rgb(241, 238, 238);
     height:20px;
     text-align:center;
     font-size: 15px;
-                
+    margin-right: 60px;          
 }
