@@ -58,7 +58,9 @@ div, :last-child{
     cursor: pointer;
 
 }
-
+.spin:hover{
+    box-shadow: 5px 10px white;
+}
 
 
 
