@@ -14,8 +14,8 @@ function Card (name, filepath) {
 }
 
 function createCards () {
-  new Card ('kitten1', '/images/kitten1.jpeg');
-  new Card ('kitten2', '/images/kitten2.jpeg');
+  new Card ('apple', '/images/apple.jpg');
+  new Card ('avocado', '/images/avocado.jpg');
 }
 
 function createRandomPlace (placehold1, placehold2) {
