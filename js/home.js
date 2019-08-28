@@ -1,3 +1,5 @@
+'use strict';
+
 //Background sourced from https://codepen.io/soulwire/pen/Ckzen
 var TWO_PI = Math.PI * 2;
 var HALF_PI = Math.PI * 0.5;

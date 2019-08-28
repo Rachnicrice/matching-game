@@ -68,8 +68,6 @@ footer{
     font-size: 30px;
     padding: 5px 0;
 }
-
-
  /* https://codemyui.com/theoutline-squiggle-link-hover-effect/ */
  a {
    background: linear-gradient(to bottom, var(--mainColor) 0%, var(--mainColor) 100%);

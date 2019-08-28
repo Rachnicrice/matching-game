@@ -6,13 +6,21 @@ var clickedFramework = [];
 var clickedId = [];
 var flipped = [];
 var correctGuess = 0;
-var timeFinished = [];
+var timeFinished;
+var names;
 Card.list = [];
+Score.list = [];
 
 function Card (name, filepath) {
   this.name = name;
   this.filepath = filepath;
   Card.list.push(this);
+}
+
+function Score (name, time) {
+  this.name = name;
+  this.time = time;
+  Score.list.push(this);
 }
 
 function createCards () {
@@ -88,8 +96,8 @@ function unflipClass () {
   flipped[1].classList.replace('flipped','unflipped');
 }
 
-//Function changes the class in the  first and second indexes of the array
 function rightCards() {
+  //Function changes the class in the  first and second indexes of the array
   var choice1 = document.getElementById(`${clickedId[0]}`);
   var choice2 = document.getElementById(`${clickedId[1]}`);
   choice1.classList.add('correct');
@@ -103,8 +111,8 @@ function rightCards() {
   setUpEventListener(18);
 }
 
-//Function changes the class back in the  first and second indexes of the array
 function resetCards() {
+  //Function changes the class back in the  first and second indexes of the array
 
   console.log(clickedId);
 
@@ -131,8 +139,8 @@ function resetCards() {
   setUpEventListener(18);
 }
 
-//Checks to see if array has two items in the array then empties the the array when  === 2
 function checkChoices (event) {
+  //Checks to see if array has two items in the array then empties the the array when  === 2
   if (clickedId[0] === clickedId[1]){
     clickedId.pop();
     clickedFramework.pop();
@@ -180,6 +188,7 @@ function removeEventListener (numDivs) {
 // https://stackoverflow.com/questions/5517597/plain-count-up-timer-in-javascript/7910506
 var timerVar = setInterval(countTimer, 1000);
 var totalSeconds = 0;
+
 function countTimer() {
   ++totalSeconds;
   var hour = Math.floor(totalSeconds /3600);
@@ -195,21 +204,36 @@ function countTimer() {
 
 function stopTimer (whatTime) {
   if (correctGuess === 8) {
-    timeFinished.push(whatTime);
+    timeFinished = whatTime;
+    console.log(timeFinished);
+    getScore();
     clearInterval(timerVar);
-    on()
   }
 }
 
-function on() {
-  document.getElementById("overlay").style.display = "block";
+function saveTime () {
+  var storedScores = JSON.stringify(timeFinished);
+  localStorage.setItem('score', storedScores);
 }
 
-function off() {
-  document.getElementById("overlay").style.display = "none";
+function getSavedData () {
+  timeFinished = JSON.parse(localStorage.getItem('score'));
+  names = JSON.parse(localStorage.getItem('name'));
+}
+
+function getScore () {
+  saveTime();
+  getSavedData();
+
+  new Score (names, timeFinished);
+  saveScores();
+}
+
+function saveScores () {
+  var finalScores = JSON.stringify(Score.list);
+  localStorage.setItem('final', finalScores);
 }
 
 createCards();
 placeImage(9);
 setUpEventListener(18);
-on();

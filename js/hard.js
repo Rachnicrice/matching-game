@@ -7,6 +7,7 @@ var clickedId = [];
 var flipped = [];
 var correctGuess = 0;
 var timeFinished = [];
+var names = [];
 Card.list = [];
 
 function Card (name, filepath) {
@@ -212,6 +213,11 @@ function stopTimer (whatTime) {
 function saveScore () {
   var storedScores = JSON.stringify(timeFinished);
   localStorage.setItem('name', storedScores);
+}
+
+function getSavedData () {
+  timeFinished = JSON.parse(localStorage.getItem('score'));
+  names = JSON.parse(localStorage.getItem('name'));
 }
 
 
