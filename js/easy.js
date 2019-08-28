@@ -191,8 +191,14 @@ function countTimer() {
 function stopTimer (whatTime) {
   if (correctGuess === 2) {
     timeFinished.push(whatTime);
+    saveScore();
     clearInterval(timerVar);
   }
+}
+
+function saveScore () {
+  var storedScores = JSON.stringify(timeFinished);
+  localStorage.setItem('name', storedScores);
 }
 
 function on() {
