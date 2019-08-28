@@ -25,7 +25,7 @@ function createCards () {
   new Card ('orange', '/images/orange.jpg');
   new Card ('pear', '/images/pear.jpg');
   new Card ('pineapple', '/images/pineapple.jpg');
-  new Card ('strawberry', '/images/strawberries.jpg');
+  new Card ('strawberry', '/images/strawberry.jpg');
   new Card ('tomato', '/images/tomato.jpg');
   new Card ('watermelon.png', '/images/watermelon.png');
   new Card ('kitten1', '/images/kitten1.jpeg');
@@ -171,16 +171,16 @@ function setUpEventListener (numDivs) {
 }
 
 // https://stackoverflow.com/questions/5517597/plain-count-up-timer-in-javascript/7910506
-var timerVar = setInterval(countTimer, 1000);
-var totalSeconds = 0;
-function countTimer() {
-  ++totalSeconds;
-  var hour = Math.floor(totalSeconds /3600);
-  var minute = Math.floor((totalSeconds - hour*3600)/60);
-  var seconds = totalSeconds - (hour*3600 + minute*60);
+// var timerVar = setInterval(countTimer, 1000);
+// var totalSeconds = 0;
+// function countTimer() {
+//   ++totalSeconds;
+//   var hour = Math.floor(totalSeconds /3600);
+//   var minute = Math.floor((totalSeconds - hour*3600)/60);
+//   var seconds = totalSeconds - (hour*3600 + minute*60);
 
-  document.getElementById("timer").innerHTML = hour + ":" + minute + ":" + seconds;
-}
+//   document.getElementById("timer").innerHTML = hour + ":" + minute + ":" + seconds;
+// }
 
 
 createCards();
