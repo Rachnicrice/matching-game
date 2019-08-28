@@ -37,9 +37,10 @@ header {
     margin-right: 8px;
     margin-left: 8px;
     outline: solid 3px purple;
-
 }
-
+main{
+    align-content: center;
+}
 .fellows{
      max-width: 100px; 
      height: 150px;
