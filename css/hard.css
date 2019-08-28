@@ -13,28 +13,19 @@ html {
 body{
     width: 960px;
     margin-left:230px;
-    float: center;
+    /* float: center; */
 }
 
-header{
-    background: rgb(241, 238, 238);
-    height:60px;
-    text-align:center;
-    padding-top: 40px;
-    font-size: 30px;
-}
-/* .container{
-    background: black;
-    width: 200px;
-    height: 300px;
-    display: inline-block;
-    margin-left: 20px;
-    border-radius: 10px;
-    text-align: center;
-    margin-top: 40px;
-    margin-right: 20px;
-    margin-left: 45px;
-} */
+header {
+    background-color: rgba(0,0,0,0.2);
+    position: relative;
+    height: 40px;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    /* margin-bottom: 100px; */
+  }
+
 .container{
     background: blue;
     width: 100px;
