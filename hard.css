@@ -12,6 +12,7 @@ html {
 body{
     width: 960px;
     margin-left:230px;
+    float: center;
 }
 
 header{
@@ -35,17 +36,19 @@ header{
 } */
 .container{
     background: blue;
-    width: 200px;
-    height: 300px;
+    width: 100px;
+    height: 150px;
     display: inline-block;
     border-radius: 10px;
-    text-align: center;
+    /* text-align: center; */
     margin-right: 20px;
+    float: left;
+
 }
 
 .fellows{
-     max-width: 200px; 
-     height: 300px;
+     max-width: 100px; 
+     height: 150px;
      position: absolute;
      top: 0px;
      left: 0px;
@@ -65,12 +68,14 @@ footer{
 }
 
 .unflipped{
-    max-width: 200px;
-    max-height: 300px;
+    max-width: 100px;
+    max-height: 150px;
     background-color: black;
 }
 
 div, :last-child{
+    max-width: 100px;
+    max-height: 150px;
     position: relative;
     top: 0px;
     left: 0px;
