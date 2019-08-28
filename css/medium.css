@@ -1,0 +1,76 @@
+
+
+*{
+    /* outline: dotted 1px orangered; */
+}
+body{
+    width: 1080px;
+}
+
+/* header{
+    background: rgb(241, 238, 238);
+    height:40px;
+    text-align:center;
+    padding-top: 10px;
+    font-size: 30px;
+} */
+
+.fellows{ 
+    width: 200px; 
+    height: 300px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+}
+
+
+
+
+/* 
+.unflipped.fellows{
+    max-width: 100px;
+    max-height: 50px;
+    
+
+} */
+.unflipped.flipped {  
+    display: none;
+}
+
+
+/* .unflipped{
+    max-width: 100px;
+    max-height: 50px;
+} */
+
+div, :last-child{
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+
+
+.spin{
+    /* margin: 10px 0px 0px 0px; */
+    /* margin-right:20px; */
+    border: 1.5px solid grey;
+    width: 200px;
+    height: 300px;
+    display: inline-block;
+    border-radius:10px;
+    
+}
+
+
+
+
+
+
+footer{
+    background: rgb(241, 238, 238);
+    height:20px;
+    text-align:center;
+    font-size: 15px;
+                
+}
