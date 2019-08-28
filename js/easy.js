@@ -90,6 +90,7 @@ function rightCards() {
   clickedId = [];
   flipped = [];
   setUpEventListener(4);
+  on();
 }
 
 //Function changes the class back in the  first and second indexes of the array
@@ -176,6 +177,14 @@ function countTimer() {
   var seconds = totalSeconds - (hour*3600 + minute*60);
 
   document.getElementById("timer").innerHTML = hour + ":" + minute + ":" + seconds;
+}
+
+function on() {
+  document.getElementById("overlay").style.display = "block";
+}
+
+function off() {
+  document.getElementById("overlay").style.display = "none";
 }
 
 
