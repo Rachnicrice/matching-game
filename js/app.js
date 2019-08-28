@@ -120,10 +120,16 @@ function resetCards() {
 
 //Checks to see if array has two items in the array then empties the the array when  === 2
 function checkChoices (event) {
-  if (clickedFramework[0] === clickedFramework[1]) {
-    rightCards(event);
+  if (clickedId[0] === clickedId[1]){
+    clickedId.pop();
+    clickedFramework.pop();
+    flipped.pop();
   } else {
-    setTimeout(resetCards, 1500);
+    if (clickedFramework[0] === clickedFramework[1]) {
+      rightCards(event);
+    } else {
+      setTimeout(resetCards, 1500);
+    }
   }
 }
 
