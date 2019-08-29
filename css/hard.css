@@ -1,7 +1,3 @@
-/* *{
-    outline: dotted 1px orangered;
-}
-
 /* https://css-tricks.com/perfect-full-page-background-image/ */
 html {
     background: url(../images/background.jpg) no-repeat center center fixed;
@@ -63,7 +59,6 @@ main{
     margin-top: 30px;
     width: 960px;
     margin-left:230px;
-    /* float: center; */
 }
 
 header {
@@ -73,8 +68,7 @@ header {
     width: 100%;
     left: 0px;
     top: 0px;
-    /* margin-bottom: 100px; */
-  }
+}
 
 .container{
     background: blue;
@@ -88,6 +82,7 @@ header {
     margin-left: 8px;
     outline: solid 3px purple;
 }
+
 .container:hover{
     box-shadow: 0px 0px 40px 20px rgb(146, 69, 146);
  }
@@ -158,26 +153,3 @@ div, :last-child{
     padding: 5px 0;
 }
 
-#overlay {
-    position: fixed; /* Sit on top of the page content */
-    display: none; /* Hidden by default */
-    width: 100%; /* Full width (cover the whole page) */
-    height: 100%; /* Full height (cover the whole page) */
-    top: 0; 
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
-    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-    cursor: pointer; /* Add a pointer on hover */
-  }
-
-  #text{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    font-size: 50px;
-    color: white;
-    transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-  }
