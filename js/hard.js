@@ -228,6 +228,8 @@ function saveTime () {
 function getSavedData () {
   timeFinished = JSON.parse(localStorage.getItem('score'));
   names = JSON.parse(localStorage.getItem('name'));
+
+  Score.list = JSON.parse(localStorage.getItem('final'));
 }
 
 function getScore () {
