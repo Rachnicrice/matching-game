@@ -105,7 +105,6 @@ function rightCards() {
   clickedId = [];
   flipped = [];
   setUpEventListener(8);
-  on();
 }
 
 //Function changes the class back in the  first and second indexes of the array
@@ -200,11 +199,11 @@ function countTimer() {
 }
 
 function stopTimer (whatTime) {
-  if (correctGuess === 8) {
+  if (correctGuess === 4) {
     timeFinished = whatTime;
     console.log(timeFinished);
-    getScore();
     clearInterval(timerVar);
+    getScore();
   }
 }
 
