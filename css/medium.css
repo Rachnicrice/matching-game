@@ -147,14 +147,14 @@ footer{
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0,0,0,0.4); /* Black background with opacity */
+  background-color: rgba(0,0,0,0.0); /* Black background with opacity */
   z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
   cursor: pointer; /* Add a pointer on hover */
 }
 #toasty {
-    height: 200px;
-    width: 200px;
-    position: fixed;
-    margin-top: 180px;
-    float: left;
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  right:0px;
+  bottom: 0px;
 }
