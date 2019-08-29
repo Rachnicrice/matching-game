@@ -25,14 +25,14 @@ function Score (name, time) {
 }
 
 function createCards () {
-  new Card ('apple', '/images/apple.jpg');
-  new Card ('avocado', '/images/avocado.jpg');
-  new Card ('banana', '/images/banana.jpg');
-  new Card ('guava.jpg', '/images/guava.jpg');
-  new Card ('kiwi', '/images/kiwi.jpg');
-  new Card ('lemon', '/images/lemon.jpg');
-  new Card ('lime', '/images/lime.png');
-  new Card ('orange', '/images/orange.jpg');
+  new Card ('apple', '../images/apple.jpg');
+  new Card ('avocado', '../images/avocado.jpg');
+  new Card ('banana', '../images/banana.jpg');
+  new Card ('guava.jpg', '../images/guava.jpg');
+  new Card ('kiwi', '../images/kiwi.jpg');
+  new Card ('lemon', '../images/lemon.jpg');
+  new Card ('lime', '../images/lime.png');
+  new Card ('orange', '../images/orange.jpg');
 }
 
 function createRandomPlace (placehold1, placehold2) {
