@@ -26,10 +26,10 @@ function Score (name, time) {
 Score.list = [];
 
 function createCards () {
-  new Card ('apple', '/images/apple.jpg');
-  new Card ('avocado', '/images/avocado.jpg');
-  new Card ('banana', '/images/banana.jpg');
-  new Card ('guava', '/images/guava.jpg');
+  new Card ('apple', '../images/apple.jpg');
+  new Card ('avocado', '../images/avocado.jpg');
+  new Card ('banana', '../images/banana.jpg');
+  new Card ('guava', '../images/guava.jpg');
 }
 
 function createRandomPlace (placehold1, placehold2) {
