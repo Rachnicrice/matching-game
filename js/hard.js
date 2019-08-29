@@ -19,6 +19,7 @@ function Card (name, filepath) {
 
 function Score (name, time) {
   this.name = name;
+  this.level = 'Hard';
   this.time = time;
   Score.list.push(this);
 }

@@ -18,6 +18,7 @@ function Card (name, filepath) {
 
 function Score (name, time) {
   this.name = name;
+  this.level = 'Easy';
   this.time = time;
   Score.list.push(this);
 }
@@ -251,6 +252,7 @@ function off() {
   document.getElementById("overlay").style.display = "none";
 }
 
+//Sourced from https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_audio_play
 var x = document.getElementById("myAudio");
 function playAudio() {
   x.play();
