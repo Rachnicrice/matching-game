@@ -123,7 +123,6 @@ input[type=text]:focus, textarea:focus {
  margin: 5px 1px 3px 0px;
  border: 1px solid rgba(81, 203, 238, 1);
 }
-
 /* https://codepen.io/gau/pen/LjQwGp */
 #timer {
   font-family: 'Share Tech Mono', monospace;
