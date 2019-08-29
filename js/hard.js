@@ -213,6 +213,8 @@ function saveScore () {
   var storedScores = JSON.stringify(timeFinished);
   localStorage.setItem('name', storedScores);
 }
+//+========
+
 
 
 createCards();
