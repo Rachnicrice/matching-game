@@ -196,11 +196,12 @@ function countTimer() {
   //End code sourced from Stack Overflow
 
   var whatTime = hour + ':' + minute + ':' + seconds;
-  stopTimer(whatTime);
+  stopTimer(whatTime, seconds);
 }
 
-function stopTimer (whatTime) {
+function stopTimer (whatTime, seconds) {
   if (correctGuess === 8) {
+    checkToasty(seconds);
     timeFinished = whatTime;
     console.log(timeFinished);
     clearInterval(timerVar);
@@ -225,8 +226,8 @@ function getSavedData () {
 function getScore () {
   saveTime();
   getSavedData();
-
   new Score (names, timeFinished);
+
   saveScores();
 }
 
@@ -235,7 +236,26 @@ function saveScores () {
   localStorage.setItem('final', finalScores);
 }
 
+function checkToasty (seconds) {
+  if (seconds <= 30) {
+    on();
+    playAudio();
+    setTimeout(off,1000);
+  }
+}
 
+function on() {
+  document.getElementById("overlay").style.display = "block";
+}
+
+function off() {
+  document.getElementById("overlay").style.display = "none";
+}
+
+var x = document.getElementById("myAudio");
+function playAudio() {
+  x.play();
+}
 
 createCards();
 placeImage(8);
