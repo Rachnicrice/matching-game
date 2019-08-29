@@ -9,6 +9,7 @@ var correctGuess = 0;
 var timeFinished;
 var names;
 Card.list = [];
+Score.list = [];
 
 function Card (name, filepath) {
   this.name = name;
