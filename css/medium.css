@@ -9,18 +9,15 @@ html {
 
 body{
     width: 960px;
-    margin-left:70px;
+    text-align: center;
+    margin-top: 15mm;
 }
 
-header {
-    background-color: rgba(0,0,0,0.2);  
-    height: 20px;
-   
-  }
+
 
 .fellows{ 
-    width: 200px; 
-    height: 240px;
+  width: 150px;
+  height: 150px;
     position: absolute;
     top: 0px;
     left: 0px;
@@ -43,11 +40,15 @@ div, :last-child{
 
 .spin{
     border: 1.5px solid grey;
-    width: 200px;
-    height: 240px;
+    width: 150px;
+    height: 150px;
     display: inline-block;
     margin-top:20px;
     margin-right:10px; 
+}
+
+.spin:hover{
+  box-shadow: 0px 0px 40px 20px rgb(146, 69, 146);
 }
 
 footer{
@@ -57,7 +58,7 @@ footer{
 #timer {
     font-family: 'Share Tech Mono', monospace;
     margin-top:20px;
-    margin-left: 170mm;
+    margin-left: 185mm;
     color: #ffffff;
     text-align: center;
     position: relative;
@@ -84,5 +85,39 @@ footer{
    background-repeat: repeat-x;
    text-decoration: none;
  }
+ #home{
+  color: rgb(248, 246, 255);
+  margin-left:95mm;
+  display: inline;
+  text-decoration: underline;
 
+}
+#home:hover{
+  color: ivory;
+  cursor: pointer;
+
+}
+
+#play{
+  color: rgb(248, 246, 255);
+  margin-left:10mm;
+  display: inline;
+  text-decoration: underline;
+
+}
+#play:hover{
+  color: ivory;
+  cursor: pointer;
+
+}
+#lead{
+  color: ivory;
+  margin-left:10mm;
+  display: inline;
+  text-decoration: underline;
+}
+#lead:hover{
+  color: ivory;
+  cursor: pointer;
+}
   

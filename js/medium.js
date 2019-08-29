@@ -27,7 +27,6 @@ function createCards () {
   new Card ('apple', '/images/apple.jpg');
   new Card ('avocado', '/images/avocado.jpg');
   new Card ('banana', '/images/banana.jpg');
-  new Card ('blueberry', '/images/blueberry.jpg');
   new Card ('guava.jpg', '/images/guava.jpg');
   new Card ('kiwi', '/images/kiwi.jpg');
   new Card ('lemon', '/images/lemon.jpg');
@@ -72,7 +71,7 @@ function placeImage (numImages) {
     img.id = img.alt;
 
     for (var k = 0; k < 2; k++) {
-      var place = createRandomPlace(1, 18);
+      var place = createRandomPlace(1, 16);
       placesOccupied.push(place);
 
       var placeHere = document.getElementById(`img${place}`);
@@ -108,7 +107,7 @@ function rightCards() {
   clickedFramework = [];
   clickedId = [];
   flipped = [];
-  setUpEventListener(18);
+  setUpEventListener(16);
 }
 
 function resetCards() {
@@ -136,7 +135,7 @@ function resetCards() {
   clickedId = [];
   unflipClass();
   flipped = [];
-  setUpEventListener(18);
+  setUpEventListener(16);
 }
 
 function checkChoices (event) {
@@ -156,7 +155,7 @@ function checkChoices (event) {
 
 function checkClicks (event) {
   if (clickedFramework.length === 2) {
-    removeEventListener(18);
+    removeEventListener(16);
     checkChoices(event);
   }
 }
@@ -195,10 +194,10 @@ function countTimer() {
   var minute = Math.floor((totalSeconds - hour*3600)/60);
   var seconds = totalSeconds - (hour*3600 + minute*60);
 
-  document.getElementById("timer").innerHTML = hour + ":" + minute + ":" + seconds;
+  document.getElementById('timer').innerHTML = hour + ':' + minute + ':' + seconds;
   //End code sourced from Stack Overflow
 
-  var whatTime = hour + ":" + minute + ":" + seconds;
+  var whatTime = hour + ':' + minute + ':' + seconds;
   stopTimer(whatTime);
 }
 
@@ -235,5 +234,5 @@ function saveScores () {
 }
 
 createCards();
-placeImage(9);
-setUpEventListener(18);
+placeImage(8);
+setUpEventListener(16);

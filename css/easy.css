@@ -12,6 +12,7 @@ html {
 body{
     width: 960px;
     text-align: center;
+    margin-top:20mm;
 }
 header{
     margin-top:50px;
