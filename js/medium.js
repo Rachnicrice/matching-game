@@ -1,4 +1,3 @@
-
 'use strict';
 
 var placesOccupied = [];
@@ -28,7 +27,11 @@ function createCards () {
   new Card ('apple', '/images/apple.jpg');
   new Card ('avocado', '/images/avocado.jpg');
   new Card ('banana', '/images/banana.jpg');
-  new Card ('guava', '/images/guava.jpg');
+  new Card ('guava.jpg', '/images/guava.jpg');
+  new Card ('kiwi', '/images/kiwi.jpg');
+  new Card ('lemon', '/images/lemon.jpg');
+  new Card ('lime', '/images/lime.png');
+  new Card ('orange', '/images/orange.jpg');
 }
 
 function createRandomPlace (placehold1, placehold2) {
@@ -68,7 +71,7 @@ function placeImage (numImages) {
     img.id = img.alt;
 
     for (var k = 0; k < 2; k++) {
-      var place = createRandomPlace(1, 8);
+      var place = createRandomPlace(1, 16);
       placesOccupied.push(place);
 
       var placeHere = document.getElementById(`img${place}`);
@@ -92,8 +95,8 @@ function unflipClass () {
   flipped[1].classList.replace('flipped','unflipped');
 }
 
-//Function changes the class in the  first and second indexes of the array
 function rightCards() {
+  //Function changes the class in the  first and second indexes of the array
   var choice1 = document.getElementById(`${clickedId[0]}`);
   var choice2 = document.getElementById(`${clickedId[1]}`);
   choice1.classList.add('correct');
@@ -104,11 +107,11 @@ function rightCards() {
   clickedFramework = [];
   clickedId = [];
   flipped = [];
-  setUpEventListener(8);
+  setUpEventListener(16);
 }
 
-//Function changes the class back in the  first and second indexes of the array
 function resetCards() {
+  //Function changes the class back in the  first and second indexes of the array
 
   console.log(clickedId);
 
@@ -132,11 +135,11 @@ function resetCards() {
   clickedId = [];
   unflipClass();
   flipped = [];
-  setUpEventListener(8);
+  setUpEventListener(16);
 }
 
-//Checks to see if array has two items in the array then empties the the array when  === 2
 function checkChoices (event) {
+  //Checks to see if array has two items in the array then empties the the array when  === 2
   if (clickedId[0] === clickedId[1]){
     clickedId.pop();
     clickedFramework.pop();
@@ -152,7 +155,7 @@ function checkChoices (event) {
 
 function checkClicks (event) {
   if (clickedFramework.length === 2) {
-    removeEventListener(8);
+    removeEventListener(16);
     checkChoices(event);
   }
 }
@@ -199,11 +202,11 @@ function countTimer() {
 }
 
 function stopTimer (whatTime) {
-  if (correctGuess === 4) {
+  if (correctGuess === 8) {
     timeFinished = whatTime;
     console.log(timeFinished);
-    clearInterval(timerVar);
     getScore();
+    clearInterval(timerVar);
   }
 }
 
@@ -232,8 +235,6 @@ function saveScores () {
   localStorage.setItem('final', finalScores);
 }
 
-
-
 createCards();
-placeImage(4);
-setUpEventListener(8);
+placeImage(8);
+setUpEventListener(16);

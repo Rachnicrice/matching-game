@@ -1,4 +1,3 @@
-
 'use strict';
 
 var placesOccupied = [];
@@ -25,10 +24,22 @@ function Score (name, time) {
 }
 
 function createCards () {
-  new Card ('apple', '/images/apple.jpg');
-  new Card ('avocado', '/images/avocado.jpg');
-  new Card ('banana', '/images/banana.jpg');
-  new Card ('guava', '/images/guava.jpg');
+  new Card ('newimage1', '/images/newimage1.jpeg');
+  new Card ('newimage2', '/images/newimage2.jpeg');
+  new Card ('newimage3', '/images/newimage3.jpeg');
+  new Card ('newimage4', '/images/newimage4.jpeg');
+  new Card ('newimage5', '/images/newimage5.jpeg');
+  new Card ('newimage6', '/images/newimage6.jpeg');
+  new Card ('newimage7', '/images/newimage7.jpeg');
+  new Card ('newimage8', '/images/newimage8.jpeg');
+  new Card ('newimage9', '/images/newimage9.jpeg');
+  new Card ('newimage10', '/images/newimage10.jpeg');
+  new Card ('newimage11', '/images/newimage11.jpeg');
+  new Card ('newimage12', '/images/newimage12.jpeg');
+  new Card ('newimage13', '/images/newimage13.jpeg');
+  new Card ('newimage14', '/images/newimage14.jpeg');
+  new Card ('newimage15', '/images/newimage15.jpeg');
+  new Card ('newimage16', '/images/newimage16.jpg');
 }
 
 function createRandomPlace (placehold1, placehold2) {
@@ -68,7 +79,7 @@ function placeImage (numImages) {
     img.id = img.alt;
 
     for (var k = 0; k < 2; k++) {
-      var place = createRandomPlace(1, 8);
+      var place = createRandomPlace(1, 32);
       placesOccupied.push(place);
 
       var placeHere = document.getElementById(`img${place}`);
@@ -104,7 +115,7 @@ function rightCards() {
   clickedFramework = [];
   clickedId = [];
   flipped = [];
-  setUpEventListener(8);
+  setUpEventListener(32);
 }
 
 //Function changes the class back in the  first and second indexes of the array
@@ -132,7 +143,7 @@ function resetCards() {
   clickedId = [];
   unflipClass();
   flipped = [];
-  setUpEventListener(8);
+  setUpEventListener(32);
 }
 
 //Checks to see if array has two items in the array then empties the the array when  === 2
@@ -152,7 +163,7 @@ function checkChoices (event) {
 
 function checkClicks (event) {
   if (clickedFramework.length === 2) {
-    removeEventListener(8);
+    removeEventListener(32);
     checkChoices(event);
   }
 }
@@ -191,19 +202,19 @@ function countTimer() {
   var minute = Math.floor((totalSeconds - hour*3600)/60);
   var seconds = totalSeconds - (hour*3600 + minute*60);
 
-  document.getElementById('timer').innerHTML = hour + ':' + minute + ':' + seconds;
+  document.getElementById("timer").innerHTML = hour + ":" + minute + ":" + seconds;
   //End code sourced from Stack Overflow
 
-  var whatTime = hour + ':' + minute + ':' + seconds;
+  var whatTime = hour + ":" + minute + ":" + seconds;
   stopTimer(whatTime);
 }
 
 function stopTimer (whatTime) {
-  if (correctGuess === 4) {
+  if (correctGuess === 16) {
     timeFinished = whatTime;
     console.log(timeFinished);
-    clearInterval(timerVar);
     getScore();
+    clearInterval(timerVar);
   }
 }
 
@@ -211,6 +222,8 @@ function saveTime () {
   var storedScores = JSON.stringify(timeFinished);
   localStorage.setItem('score', storedScores);
 }
+//+========
+
 
 function getSavedData () {
   timeFinished = JSON.parse(localStorage.getItem('score'));
@@ -233,7 +246,6 @@ function saveScores () {
 }
 
 
-
 createCards();
-placeImage(4);
-setUpEventListener(8);
+placeImage(16);
+setUpEventListener(32);

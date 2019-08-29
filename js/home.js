@@ -232,7 +232,7 @@ init();
 step();
 //End code sourced from https://codepen.io/soulwire/pen/Ckzen
 
-var names = [];
+var names;
 var form = document.getElementById('form');
 
 function redirect() {
@@ -248,7 +248,7 @@ function eventHandler (e) {
   e.preventDefault();
 
   var userName = e.target.username.value;
-  names.push(userName);
+  names = userName;
 
   saveUser();
   redirect();
