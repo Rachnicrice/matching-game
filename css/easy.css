@@ -12,12 +12,13 @@ html {
 body{
     width: 960px;
     text-align: center;
-    margin-top:20mm;
+    margin-top:10mm;
 }
 header{
-    margin-top:50px;
+    /* margin-top:50px; */
 }
 #home{
+    font-size: 20px;
     color: rgb(248, 246, 255);
     display: inline;
     text-decoration: underline;
@@ -27,6 +28,7 @@ header{
     cursor: pointer;
 }
 #play{
+    font-size: 20px;
     color: rgb(248, 246, 255);
     margin-left:10mm;
     display: inline;
@@ -37,6 +39,7 @@ header{
     cursor: pointer;
 }
 #lead{
+    font-size: 20px;
     color: ivory;
     margin-left:10mm;
     display: inline;
@@ -47,6 +50,7 @@ header{
     cursor: pointer;
 }
 #next{
+    font-size: 20px;
     color: ivory;
     margin-left:10mm;
     display: inline;
@@ -97,6 +101,7 @@ footer{
     font-family: 'Share Tech Mono', monospace;
     margin-top:40px;
     margin-left: 185mm;
+    margin-bottom: 20px;
     color: #ffffff;
     text-align: center;
     position: relative;
@@ -122,4 +127,32 @@ a {
     background-repeat: repeat-x;
     text-decoration: none;
   }
- 
+
+#easy{
+    font-size: 20px;
+    color: rgb(248, 246, 255);
+    display: inline;
+    margin-left: -10mm;
+     
+}
+/* https://www.w3schools.com/howto/howto_css_overlay.asp */
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.4); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+  }
+  #toasty {
+      height: 200px;
+      width: 200px;
+      position: fixed;
+      margin-top: 180px;
+      float: left;
+  }
