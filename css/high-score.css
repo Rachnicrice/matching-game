@@ -66,24 +66,21 @@ a {
   }
   .scoreboard {
   position: relative;
-  margin-top: 130px;
+  margin-top: 110px;
   margin-left:90mm;
   background: black;
   border-radius: 10px;
   border-color: aliceblue;
 	background-repeat:no-repeat;
 	background-size:cover;
-	height:500px;
+	height:700px;
   width:800px;  
   color: ivory;
   z-index: 4;
   }
-  #scores{
-    text-decoration: underline;
-  }
   li{
-    /* margin-left: 20px; */
     padding-top:20px;
     text-align: center;
+    font-size: 20px;
   }
  
