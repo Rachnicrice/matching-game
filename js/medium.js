@@ -19,6 +19,7 @@ function Card (name, filepath) {
 
 function Score (name, time) {
   this.name = name;
+  this.level = 'Medium';
   this.time = time;
   Score.list.push(this);
 }
@@ -95,8 +96,8 @@ function unflipClass () {
   flipped[1].classList.replace('flipped','unflipped');
 }
 
+//Function changes the class in the  first and second indexes of the array
 function rightCards() {
-  //Function changes the class in the  first and second indexes of the array
   var choice1 = document.getElementById(`${clickedId[0]}`);
   var choice2 = document.getElementById(`${clickedId[1]}`);
   choice1.classList.add('correct');
@@ -110,8 +111,8 @@ function rightCards() {
   setUpEventListener(16);
 }
 
+//Function changes the class back in the  first and second indexes of the array
 function resetCards() {
-  //Function changes the class back in the  first and second indexes of the array
 
   console.log(clickedId);
 
@@ -138,8 +139,8 @@ function resetCards() {
   setUpEventListener(16);
 }
 
+//Checks to see if array has two items in the array then empties the the array when  === 2
 function checkChoices (event) {
-  //Checks to see if array has two items in the array then empties the the array when  === 2
   if (clickedId[0] === clickedId[1]){
     clickedId.pop();
     clickedFramework.pop();
@@ -163,8 +164,6 @@ function checkClicks (event) {
 function clickHandler (e) {
   clickedFramework.push(e.target.parentElement.dataset.framework);
   clickedId.push(e.target.parentElement.id);
-
-  console.log(clickedId);
 
   flipClass(e);
   checkClicks(e);
@@ -198,15 +197,16 @@ function countTimer() {
   //End code sourced from Stack Overflow
 
   var whatTime = hour + ':' + minute + ':' + seconds;
-  stopTimer(whatTime);
+  stopTimer(whatTime, seconds);
 }
 
-function stopTimer (whatTime) {
+function stopTimer (whatTime, seconds) {
   if (correctGuess === 8) {
+    checkToasty(seconds);
     timeFinished = whatTime;
     console.log(timeFinished);
-    getScore();
     clearInterval(timerVar);
+    getScore();
   }
 }
 
@@ -219,20 +219,44 @@ function getSavedData () {
   timeFinished = JSON.parse(localStorage.getItem('score'));
   names = JSON.parse(localStorage.getItem('name'));
 
-  Score.list = JSON.parse(localStorage.getItem('final'));
+  if (Score.list.length) {
+    Score.list = JSON.parse(localStorage.getItem('final'));
+  }
 }
 
 function getScore () {
   saveTime();
   getSavedData();
-
   new Score (names, timeFinished);
+
   saveScores();
 }
 
 function saveScores () {
   var finalScores = JSON.stringify(Score.list);
   localStorage.setItem('final', finalScores);
+}
+
+function checkToasty (seconds) {
+  if (seconds <= 30) {
+    on();
+    playAudio();
+    setTimeout(off,1000);
+  }
+}
+
+function on() {
+  document.getElementById("overlay").style.display = "block";
+}
+
+function off() {
+  document.getElementById("overlay").style.display = "none";
+}
+
+//Sourced from https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_audio_play
+var x = document.getElementById("myAudio");
+function playAudio() {
+  x.play();
 }
 
 createCards();

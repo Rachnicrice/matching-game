@@ -12,39 +12,34 @@ html {
 body{
     width: 960px;
     text-align: center;
-    margin-top:20mm;
+    margin-top:10mm;
 }
 header{
-    margin-top:50px;
+    /* margin-top:50px; */
 }
 #home{
+    font-size: 20px;
     color: rgb(248, 246, 255);
     display: inline;
     text-decoration: underline;
-
 }
 #home:hover{
     color: ivory;
     cursor: pointer;
-
 }
-
 #play{
+    font-size: 20px;
     color: rgb(248, 246, 255);
     margin-left:10mm;
     display: inline;
     text-decoration: underline;
-
 }
 #play:hover{
     color: ivory;
     cursor: pointer;
-
 }
-
-
-
 #lead{
+    font-size: 20px;
     color: ivory;
     margin-left:10mm;
     display: inline;
@@ -54,9 +49,8 @@ header{
     color: ivory;
     cursor: pointer;
 }
-
-
 #next{
+    font-size: 20px;
     color: ivory;
     margin-left:10mm;
     display: inline;
@@ -66,8 +60,6 @@ header{
     color: ivory;
     cursor: pointer;
 }
-
-
 .fellows{ 
     width: 200px; 
     height: 200px;
@@ -77,11 +69,9 @@ header{
     border-radius:10px;  
     z-index: 1;
 }
-
 .unflipped.flipped {  
     display: none;
 }
-
 div, :last-child{
     position: relative;
     top: 0px;
@@ -90,7 +80,6 @@ div, :last-child{
     height: 100%;
     border-radius:10px;  
 }
-
 .spin{
     border: 1.5px solid grey;
     width: 200px;
@@ -99,25 +88,20 @@ div, :last-child{
     margin-top:40px;
     margin-right:30px; 
     cursor: pointer;
-
 }
 .spin:hover{
     box-shadow: 0px 0px 40px 20px rgb(146, 69, 146);
 }
-
-
-
 footer{
     height:20px;
     color:white;
 }
-
-
 /* https://codepen.io/gau/pen/LjQwGp */
 #timer {
     font-family: 'Share Tech Mono', monospace;
     margin-top:40px;
     margin-left: 185mm;
+    margin-bottom: 20px;
     color: #ffffff;
     text-align: center;
     position: relative;
@@ -127,7 +111,6 @@ footer{
     letter-spacing: 0.05em;
     font-size: 30px;
 }
-
 /* https://codemyui.com/theoutline-squiggle-link-hover-effect/ */
 a {
     background: linear-gradient(to bottom, var(--mainColor) 0%, var(--mainColor) 100%);
@@ -144,4 +127,32 @@ a {
     background-repeat: repeat-x;
     text-decoration: none;
   }
- 
+
+#easy{
+    font-size: 20px;
+    color: rgb(248, 246, 255);
+    display: inline;
+    margin-left: -10mm;
+     
+}
+/* https://www.w3schools.com/howto/howto_css_overlay.asp */
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.0); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+  }
+  #toasty {
+      height: 200px;
+      width: 200px;
+      position: absolute;
+      right:0px;
+      bottom: 0px;
+  }

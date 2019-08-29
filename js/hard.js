@@ -19,6 +19,7 @@ function Card (name, filepath) {
 
 function Score (name, time) {
   this.name = name;
+  this.level = 'Hard';
   this.time = time;
   Score.list.push(this);
 }
@@ -222,14 +223,14 @@ function saveTime () {
   var storedScores = JSON.stringify(timeFinished);
   localStorage.setItem('score', storedScores);
 }
-//+========
-
 
 function getSavedData () {
   timeFinished = JSON.parse(localStorage.getItem('score'));
   names = JSON.parse(localStorage.getItem('name'));
 
-  Score.list = JSON.parse(localStorage.getItem('final'));
+  if (Score.list.length) {
+    Score.list = JSON.parse(localStorage.getItem('final'));
+  }
 }
 
 function getScore () {

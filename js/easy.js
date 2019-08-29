@@ -1,4 +1,3 @@
-
 'use strict';
 
 var placesOccupied = [];
@@ -10,7 +9,6 @@ var correctGuess = 0;
 var timeFinished;
 var names;
 Card.list = [];
-Score.list = [];
 
 function Card (name, filepath) {
   this.name = name;
@@ -20,9 +18,12 @@ function Card (name, filepath) {
 
 function Score (name, time) {
   this.name = name;
+  this.level = 'Easy';
   this.time = time;
   Score.list.push(this);
 }
+
+Score.list = [];
 
 function createCards () {
   new Card ('apple', '/images/apple.jpg');
@@ -195,11 +196,12 @@ function countTimer() {
   //End code sourced from Stack Overflow
 
   var whatTime = hour + ':' + minute + ':' + seconds;
-  stopTimer(whatTime);
+  stopTimer(whatTime, seconds);
 }
 
-function stopTimer (whatTime) {
+function stopTimer (whatTime, seconds) {
   if (correctGuess === 4) {
+    checkToasty(seconds);
     timeFinished = whatTime;
     console.log(timeFinished);
     clearInterval(timerVar);
@@ -216,14 +218,16 @@ function getSavedData () {
   timeFinished = JSON.parse(localStorage.getItem('score'));
   names = JSON.parse(localStorage.getItem('name'));
 
-  Score.list = JSON.parse(localStorage.getItem('final'));
+  if (Score.list.length) {
+    Score.list = JSON.parse(localStorage.getItem('final'));
+  }
 }
 
 function getScore () {
   saveTime();
   getSavedData();
-
   new Score (names, timeFinished);
+
   saveScores();
 }
 
@@ -232,7 +236,27 @@ function saveScores () {
   localStorage.setItem('final', finalScores);
 }
 
+function checkToasty (seconds) {
+  if (seconds <= 30) {
+    on();
+    playAudio();
+    setTimeout(off,1000);
+  }
+}
 
+function on() {
+  document.getElementById('overlay').style.display = 'block';
+}
+
+function off() {
+  document.getElementById('overlay').style.display = 'none';
+}
+
+//Sourced from https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_audio_play
+var x = document.getElementById('myAudio');
+function playAudio() {
+  x.play();
+}
 
 createCards();
 placeImage(4);
