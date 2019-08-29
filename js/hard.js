@@ -222,14 +222,14 @@ function saveTime () {
   var storedScores = JSON.stringify(timeFinished);
   localStorage.setItem('score', storedScores);
 }
-//+========
-
 
 function getSavedData () {
   timeFinished = JSON.parse(localStorage.getItem('score'));
   names = JSON.parse(localStorage.getItem('name'));
 
-  Score.list = JSON.parse(localStorage.getItem('final'));
+  if (Score.list.length) {
+    Score.list = JSON.parse(localStorage.getItem('final'));
+  }
 }
 
 function getScore () {

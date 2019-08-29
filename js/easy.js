@@ -1,4 +1,3 @@
-
 'use strict';
 
 var placesOccupied = [];
@@ -10,7 +9,6 @@ var correctGuess = 0;
 var timeFinished;
 var names;
 Card.list = [];
-Score.list = [];
 
 function Card (name, filepath) {
   this.name = name;
@@ -23,6 +21,8 @@ function Score (name, time) {
   this.time = time;
   Score.list.push(this);
 }
+
+Score.list = [];
 
 function createCards () {
   new Card ('apple', '/images/apple.jpg');
@@ -216,14 +216,16 @@ function getSavedData () {
   timeFinished = JSON.parse(localStorage.getItem('score'));
   names = JSON.parse(localStorage.getItem('name'));
 
-  Score.list = JSON.parse(localStorage.getItem('final'));
+  if (Score.list.length) {
+    Score.list = JSON.parse(localStorage.getItem('final'));
+  }
 }
 
 function getScore () {
   saveTime();
   getSavedData();
-
   new Score (names, timeFinished);
+
   saveScores();
 }
 
@@ -231,8 +233,6 @@ function saveScores () {
   var finalScores = JSON.stringify(Score.list);
   localStorage.setItem('final', finalScores);
 }
-
-
 
 createCards();
 placeImage(4);

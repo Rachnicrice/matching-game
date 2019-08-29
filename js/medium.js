@@ -95,8 +95,8 @@ function unflipClass () {
   flipped[1].classList.replace('flipped','unflipped');
 }
 
+//Function changes the class in the  first and second indexes of the array
 function rightCards() {
-  //Function changes the class in the  first and second indexes of the array
   var choice1 = document.getElementById(`${clickedId[0]}`);
   var choice2 = document.getElementById(`${clickedId[1]}`);
   choice1.classList.add('correct');
@@ -110,8 +110,8 @@ function rightCards() {
   setUpEventListener(16);
 }
 
+//Function changes the class back in the  first and second indexes of the array
 function resetCards() {
-  //Function changes the class back in the  first and second indexes of the array
 
   console.log(clickedId);
 
@@ -138,8 +138,8 @@ function resetCards() {
   setUpEventListener(16);
 }
 
+//Checks to see if array has two items in the array then empties the the array when  === 2
 function checkChoices (event) {
-  //Checks to see if array has two items in the array then empties the the array when  === 2
   if (clickedId[0] === clickedId[1]){
     clickedId.pop();
     clickedFramework.pop();
@@ -163,8 +163,6 @@ function checkClicks (event) {
 function clickHandler (e) {
   clickedFramework.push(e.target.parentElement.dataset.framework);
   clickedId.push(e.target.parentElement.id);
-
-  console.log(clickedId);
 
   flipClass(e);
   checkClicks(e);
@@ -205,8 +203,8 @@ function stopTimer (whatTime) {
   if (correctGuess === 8) {
     timeFinished = whatTime;
     console.log(timeFinished);
-    getScore();
     clearInterval(timerVar);
+    getScore();
   }
 }
 
@@ -219,7 +217,9 @@ function getSavedData () {
   timeFinished = JSON.parse(localStorage.getItem('score'));
   names = JSON.parse(localStorage.getItem('name'));
 
-  Score.list = JSON.parse(localStorage.getItem('final'));
+  if (Score.list.length) {
+    Score.list = JSON.parse(localStorage.getItem('final'));
+  }
 }
 
 function getScore () {
@@ -234,6 +234,8 @@ function saveScores () {
   var finalScores = JSON.stringify(Score.list);
   localStorage.setItem('final', finalScores);
 }
+
+
 
 createCards();
 placeImage(8);
