@@ -199,7 +199,7 @@ function countTimer() {
 }
 
 function stopTimer (whatTime) {
-  if (correctGuess === 8) {
+  if (correctGuess === 4) {
     timeFinished = whatTime;
     console.log(timeFinished);
     clearInterval(timerVar);
