@@ -108,13 +108,6 @@ header h1 {
     text-align: center;
 }
 
-footer{
-    background: rgb(241, 238, 238);
-    height:20px;
-    text-align:center;
-    font-size: 15px;
-}
-
 .unflipped.fellows.flipped {
     display: none;
 }
