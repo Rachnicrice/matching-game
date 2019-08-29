@@ -7,14 +7,21 @@ var clickedFramework = [];
 var clickedId = [];
 var flipped = [];
 var correctGuess = 0;
-var timeFinished = [];
-var names = [];
+var timeFinished;
+var names;
 Card.list = [];
+Score.list = [];
 
 function Card (name, filepath) {
   this.name = name;
   this.filepath = filepath;
   Card.list.push(this);
+}
+
+function Score (name, time) {
+  this.name = name;
+  this.time = time;
+  Score.list.push(this);
 }
 
 function createCards () {
@@ -193,16 +200,17 @@ function countTimer() {
 }
 
 function stopTimer (whatTime) {
-  if (correctGuess === 2) {
-    timeFinished.push(whatTime);
-    saveScore();
+  if (correctGuess === 8) {
+    timeFinished = whatTime;
+    console.log(timeFinished);
+    getScore();
     clearInterval(timerVar);
   }
 }
 
-function saveScore () {
+function saveTime () {
   var storedScores = JSON.stringify(timeFinished);
-  localStorage.setItem('name', storedScores);
+  localStorage.setItem('score', storedScores);
 }
 
 function getSavedData () {
@@ -210,12 +218,17 @@ function getSavedData () {
   names = JSON.parse(localStorage.getItem('name'));
 }
 
-function on() {
-  document.getElementById('overlay').style.display = 'block';
+function getScore () {
+  saveTime();
+  getSavedData();
+
+  new Score (names, timeFinished);
+  saveScores();
 }
 
-function off() {
-  document.getElementById('overlay').style.display = 'none';
+function saveScores () {
+  var finalScores = JSON.stringify(Score.list);
+  localStorage.setItem('final', finalScores);
 }
 
 
