@@ -25,22 +25,22 @@ function Score (name, time) {
 }
 
 function createCards () {
-  new Card ('newimage1', '/images/newimage1.jpeg');
-  new Card ('newimage2', '/images/newimage2.jpeg');
-  new Card ('newimage3', '/images/newimage3.jpeg');
-  new Card ('newimage4', '/images/newimage4.jpeg');
-  new Card ('newimage5', '/images/newimage5.jpeg');
-  new Card ('newimage6', '/images/newimage6.jpeg');
-  new Card ('newimage7', '/images/newimage7.jpeg');
-  new Card ('newimage8', '/images/newimage8.jpeg');
-  new Card ('newimage9', '/images/newimage9.jpeg');
-  new Card ('newimage10', '/images/newimage10.jpeg');
-  new Card ('newimage11', '/images/newimage11.jpeg');
-  new Card ('newimage12', '/images/newimage12.jpeg');
-  new Card ('newimage13', '/images/newimage13.jpeg');
-  new Card ('newimage14', '/images/newimage14.jpeg');
-  new Card ('newimage15', '/images/newimage15.jpeg');
-  new Card ('newimage16', '/images/newimage16.jpg');
+  new Card ('newimage1', '../images/newimage1.jpeg');
+  new Card ('newimage2', '../images/newimage2.jpeg');
+  new Card ('newimage3', '../images/newimage3.jpeg');
+  new Card ('newimage4', '../images/newimage4.jpeg');
+  new Card ('newimage5', '../images/newimage5.jpeg');
+  new Card ('newimage6', '../images/newimage6.jpeg');
+  new Card ('newimage7', '../images/newimage7.jpeg');
+  new Card ('newimage8', '../images/newimage8.jpeg');
+  new Card ('newimage9', '../images/newimage9.jpeg');
+  new Card ('newimage10', '../images/newimage10.jpeg');
+  new Card ('newimage11', '../images/newimage11.jpeg');
+  new Card ('newimage12', '../images/newimage12.jpeg');
+  new Card ('newimage13', '../images/newimage13.jpeg');
+  new Card ('newimage14', '../images/newimage14.jpeg');
+  new Card ('newimage15', '../images/newimage15.jpeg');
+  new Card ('newimage16', '../images/newimage16.jpg');
 }
 
 function createRandomPlace (placehold1, placehold2) {
