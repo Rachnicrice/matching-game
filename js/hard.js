@@ -207,11 +207,12 @@ function countTimer() {
   //End code sourced from Stack Overflow
 
   var whatTime = hour + ":" + minute + ":" + seconds;
-  stopTimer(whatTime);
+  stopTimer(whatTime, seconds);
 }
 
-function stopTimer (whatTime) {
+function stopTimer (whatTime, seconds) {
   if (correctGuess === 16) {
+    checkToasty(seconds);
     timeFinished = whatTime;
     console.log(timeFinished);
     getScore();
@@ -246,6 +247,27 @@ function saveScores () {
   localStorage.setItem('final', finalScores);
 }
 
+function checkToasty (seconds) {
+  if (seconds <= 30) {
+    on();
+    playAudio();
+    setTimeout(off,1000);
+  }
+}
+
+function on() {
+  document.getElementById('overlay').style.display = 'block';
+}
+
+function off() {
+  document.getElementById('overlay').style.display = 'none';
+}
+
+//Sourced from https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_audio_play
+var x = document.getElementById('myAudio');
+function playAudio() {
+  x.play();
+}
 
 createCards();
 placeImage(16);
