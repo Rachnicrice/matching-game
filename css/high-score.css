@@ -12,31 +12,25 @@ html {
   }
   #home{
     color: rgb(248, 246, 255);
-    margin-left:160mm;
+    margin-left:0mm;
     display: inline;
     text-decoration: underline;
-
 }
 #home:hover{
     color: ivory;
     cursor: pointer;
-
 }
-
 #play{
     color: rgb(248, 246, 255);
     margin-left:10mm;
     display: inline;
     text-decoration: underline;
-
 }
 #play:hover{
     color: ivory;
     cursor: pointer;
-
 }
-  
-  header {
+header {
     background-color: rgba(0,0,0,0.2);
     position: fixed;
     height: 40px;
@@ -48,22 +42,18 @@ html {
     text-align: center;
     z-index: 8;
   }
-  #leadboard{
+  /* #leadboard{
     height: 700px;
     width: 300mm;
     margin: 0px 0px 0px 160px;
-    /* margin: 30mm 0px 0px 100mm; */
     border-radius: 20px;
-  }
-  
-
-  
+  } */
   /* https://codemyui.com/theoutline-squiggle-link-hover-effect/ */
 a {
     background: linear-gradient(to bottom, var(--mainColor) 0%, var(--mainColor) 100%);
-      background-position: 0 100%;
-      background-repeat: repeat-x;
-      background-size: 3px 3px;
+    background-position: 0 100%;
+    background-repeat: repeat-x;
+    background-size: 3px 3px;
     color: ivory;
     text-decoration: none;
   }
@@ -74,19 +64,26 @@ a {
     background-repeat: repeat-x;
     text-decoration: none;
   }
-
   .scoreboard {
   position: relative;
-  margin-top: 150px;
+  margin-top: 130px;
+  margin-left:90mm;
   background: black;
-  border: 5px;
+  border-radius: 10px;
   border-color: aliceblue;
-	background-position:center;
 	background-repeat:no-repeat;
 	background-size:cover;
 	height:500px;
   width:800px;  
   color: ivory;
   z-index: 4;
+  }
+  #scores{
+    text-decoration: underline;
+  }
+  li{
+    /* margin-left: 20px; */
+    padding-top:20px;
+    text-align: center;
   }
  
